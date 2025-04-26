@@ -1,15 +1,39 @@
+"use client";
 import Footer from "@/Components/Footer";
-import { ReactNode } from "react";
+import Loader from "@/Components/Loader";
+import { ReactNode, Suspense, useEffect } from "react";
+import Lenis from "lenis";
+import "lenis/dist/lenis.css";
 
 interface BodyWrapperProps {
-    children: ReactNode
+    children: ReactNode;
 }
 
 const BodyWrapper = ({ children }: BodyWrapperProps) => {
+
+    useEffect(() => {
+        const lenis = new Lenis();
+
+        function raf(time: any) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+
+        return () => {
+            lenis.destroy();
+        };
+    }, []);
+
+
     return (
         <>
-            {children}
-            <Footer />
+            <Loader />
+            <Suspense fallback={<div />}>
+                {children}
+                <Footer />
+            </Suspense>
         </>
     );
 };
