@@ -1,10 +1,8 @@
-![EZ Brand Builders](/images/website.png)
+![EZ Brand Builders](./public/images/website.png)
 
 ## 🚀 EZ Brand Builders
 
 We provide the **best-ever services** including web development, mobile app development, digital marketing, and more — all tailored to help your brand grow fast and smart.
-
----
 
 ## 💼 What We Do
 
@@ -14,16 +12,12 @@ We provide the **best-ever services** including web development, mobile app deve
 - **Branding & Identity Design**  
 - **Social Media Marketing**
 
----
-
 ## 🎯 Who We Work With
 
 We specialize in working with:  
 - Startups  
 - SaaS Web Applications  
 - eCommerce Brands  
-
----
 
 ## ⚡ Why Choose Us?
 
@@ -33,15 +27,11 @@ We specialize in working with:
 - 🔧 Fully Customized Solutions  
 - 📈 Focused on Results  
 
----
-
 ## 🌐 Contact Us
 
 - 🌍 Website: [ezbrandbuilders.com](https://ezbrandbuilders.com)  
 - 📧 Email: ezbrandbuilders@gmail.com  
 - 📞 Phone/WhatsApp: +92 320 1091 220  
-
----
 
 ## 🛠️ Tech & Tools We Use
 
@@ -51,8 +41,6 @@ We specialize in working with:
 - Firebase / MongoDB  
 - SEO & Analytics Tools  
 - Design Tools (Figma, Adobe XD)
-
----
 
 ## 🏷️ Badges
 
