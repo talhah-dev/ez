@@ -28,7 +28,7 @@ const Home = () => {
                             <Image src={"/images/home.png"} width={1000} height={1000} className='w-full animate-[spin_200s_linear_infinite]' alt='Image' />
                         </div>
                     </div>
-                    <h2 className='md:text-4xl text-3xl mt-10 leading-tight font-medium text-white capitalize px-5'>Our Services</h2>
+                    <h2 className='md:text-4xl text-3xl mt-10 leading-tight font-medium text-white capitalize px-5'>Our Top Services</h2>
                     <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-14 gap-8 md:mt-8 mt-6 md:mb-14 mb-8 px-5">
 
                         <div className="w-full">
@@ -84,7 +84,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <div className="md:mt-16 mt-8"></div>
+            {/* <div className="md:mt-16 mt-8"></div> */}
 
         </BodyWrapper>
     );
