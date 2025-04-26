@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+![EZ Brand Builders](/images/website.png)
 
-## Getting Started
+## 🚀 EZ Brand Builders
 
-First, run the development server:
+We provide the **best-ever services** including web development, mobile app development, digital marketing, and more — all tailored to help your brand grow fast and smart.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 💼 What We Do
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Web Development**  
+- **Mobile App Development**  
+- **Search Engine Optimization (SEO)**  
+- **Branding & Identity Design**  
+- **Social Media Marketing**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🎯 Who We Work With
 
-To learn more about Next.js, take a look at the following resources:
+We specialize in working with:  
+- Startups  
+- SaaS Web Applications  
+- eCommerce Brands  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## ⚡ Why Choose Us?
 
-## Deploy on Vercel
+- ✅ Affordable Pricing  
+- 🚀 Fast Project Delivery  
+- 👨‍💻 Expert & Passionate Team  
+- 🔧 Fully Customized Solutions  
+- 📈 Focused on Results  
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🌐 Contact Us
+
+- 🌍 Website: [ezbrandbuilders.com](https://ezbrandbuilders.com)  
+- 📧 Email: ezbrandbuilders@gmail.com  
+- 📞 Phone/WhatsApp: +92 320 1091 220  
+
+---
+
+## 🛠️ Tech & Tools We Use
+
+- HTML / CSS / JavaScript  
+- React / Next.js  
+- Node.js  
+- Firebase / MongoDB  
+- SEO & Analytics Tools  
+- Design Tools (Figma, Adobe XD)
+
+---
+
+## 🏷️ Badges
+
+![Web Development](https://img.shields.io/badge/Web_Development-Expert-blue)  
+![Mobile Apps](https://img.shields.io/badge/Mobile_Apps-Android/iOS-lightgrey)  
+![SEO](https://img.shields.io/badge/SEO-Boost_Traffic-green)  
+![Branding](https://img.shields.io/badge/Branding-Logo_Design-orange)  
+![Marketing](https://img.shields.io/badge/Social_Media-Strategy-purple)
