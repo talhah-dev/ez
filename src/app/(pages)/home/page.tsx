@@ -7,6 +7,9 @@ import { IoIosArrowForward } from "react-icons/io";
 import { FaDesktop } from "react-icons/fa";
 import { MdPhoneIphone } from "react-icons/md";
 import { MdAutoGraph } from "react-icons/md";
+import Counter from '@/Components/Counter';
+import DevelopmentCard from '@/Components/DevelopmentCard';
+import Clients from '@/Components/Clients';
 
 const Home = () => {
     return (
@@ -63,7 +66,7 @@ const Home = () => {
 
             <div className="flex items-center max-w-7xl mx-auto w-full md:flex-row flex-col md:mt-24 mt-10 justify-center md:gap-16 gap-8">
                 <div className="md:max-w-[50%] w-full px-5">
-                    <h1 className='md:text-5xl text-3xl font-medium text-zinc-900'>Why Choose Us?</h1>
+                    <h2 className='md:text-5xl text-3xl font-medium text-zinc-900'>Why Choose Us?</h2>
                     <p className='text-zinc-600 md:mt-5 mt-3 md:text-'><span className='text-zinc-800 font-medium'>Reliable Solutions</span>: EZ Brand Builders understands that every business is unique. We serve them with innovative solutions that help them overcome business challenges.
                         <br />
                         <span className='text-zinc-800 font-medium'>Client-Centric Approach</span>: We always ensure our client’s mission and work accordingly to drive business growth.
@@ -84,7 +87,48 @@ const Home = () => {
                 </div>
             </div>
 
-            {/* <div className="md:mt-16 mt-8"></div> */}
+            <div className="md:mt-24 mt-8">
+                <Counter />
+            </div>
+
+            <div className="md:mt-24 mt-8 max-w-[70rem] w-full mx-auto md:p-5 p-3">
+                <h2 className='md:text-5xl text-3xl text-center font-medium text-zinc-900'>Our Development</h2>
+                <p className='text-zinc-600 md:mt-5 mt-3 text-center'>Exceptional development. Seamless integration. Delighted developers. Increased adoption.</p>
+                <div className="grid md:mt-12 mt-8 md:grid-cols-2 grid-cols-1 md:gap-3 gap-2">
+                    <Image src={"/images/development-card-1.jpg"} alt='develoment card' className='w-full md:block hidden rounded-xl md:col-span-2' width={1000} height={1000} />
+                    <Image src={"/images/development-card-1-sm.jpg"} alt='develoment card' className='w-full md:hidden block rounded-xl' width={1000} height={1000} />
+                    <DevelopmentCard image={"/images/development-card-2.jpg"} title={"Accelerate time-to-market"} description={"descriptionGet your product to market faster with our SDK development services. Reduce time-to-market from months to weeks."} />
+                    <DevelopmentCard image={"/images/development-card-3.jpg"} title={"Reduce development costs"} description={"Minimise development costs for your customers and internal teams. Well-designed SDKs save valuable time and resources."} />
+                    <DevelopmentCard image={"/images/development-card-4.jpg"} title={"Boost app quality and stability"} description={"Develop SDKs that empower developers to build stable, performant, and secure applications, leading to a better user and developer experience."} />
+                    <DevelopmentCard image={"/images/development-card-5.png"} title={"Foster developer ecosystem"} description={"Empower developers with clear documentation, intuitive APIs, guides, samples, and tutorials – to accelerate product adoption and diversify integrations."} />
+                </div>
+            </div>
+
+            <div className="md:mt-20 mt-8 max-w-[70rem] w-full mx-auto md:p-5 p-3">
+                <h2 className='md:text-5xl text-3xl text-center font-medium text-zinc-900'>Our Clients</h2>
+                <p className='text-zinc-600 md:mt-5 mt-3 text-center'>
+                    We are proud to have worked with a diverse range of clients, from startups to Fortune 500 companies. Our clients trust us to deliver high-quality software solutions that meet their unique needs and help them achieve their business goals.
+                </p>
+
+                <div className="md:mt-16 mt-8">
+                    <Clients/>
+                </div>
+
+            </div>
+
+            <div className="md:mt-20 mt-8 max-w-[70rem] w-full mx-auto md:p-5 p-3">
+                <h2 className='md:text-5xl text-3xl text-center font-medium text-zinc-900'>Our Projects</h2>
+                <p className='text-zinc-600 md:mt-5 mt-3 text-center max-w-4xl mx-auto'>
+                    We have successfully delivered a wide range of projects across various industries, including e-commerce, healthcare, finance, and more. Our portfolio showcases our expertise in web and mobile app development, digital marketing, and custom software solutions.
+                </p>
+
+                <div className="md:mt-16 mt-8">
+                    
+                </div>
+
+            </div>
+
+
 
         </BodyWrapper>
     );
