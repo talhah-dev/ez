@@ -3,7 +3,7 @@ import Clients from "@/Components/Clients"
 import Counter from "@/Components/Counter"
 import Navbar from "@/Components/Navbar"
 import ServicesCard from "@/Components/ServicesCard"
-import SERVICES from "@/Data/SERVICES"
+import SERVICES from "../../../Data/Services"
 import Image from "next/image"
 
 const page = () => {
