@@ -30,10 +30,12 @@ const page = () => {
                     <p className="text-zinc-600 md:mt-5 mt-3">Whether creating user-friendly websites, intuitive mobile applications, or maximizing your online presence with cutting-edge SEO techniques, we produce outcomes that promote operational effectiveness and business growth. With EZ Brand Builders on your side, you can successfully negotiate the complexities of the digital environment and keep your competitive edge in the market today.
                     </p>
                     <div className="flex md:items-center gap-7 md:flex-row flex-col mt-6">
-                        <Link href="/contact" className='text-[#e69135] flex items-center gap-1 transition-all duration-500 hover:gap-2 hover:opacity-80'>
-                            Let's connect with us <IoIosArrowForward size={18} />
-                        </Link>
-
+                        <div className="text-[#e69135] flex items-center gap-1 transition-all duration-500 hover:gap-2 hover:opacity-80">
+                            <Link href="/contact">
+                                Let's connect with us
+                            </Link>
+                            <IoIosArrowForward size={18} />
+                        </div>
                     </div>
                 </div>
                 <div className="md:max-w-[40%] w-full">
