@@ -3,7 +3,7 @@ import Counter from "@/Components/Counter"
 import Navbar from "@/Components/Navbar"
 import Image from "next/image"
 import Link from "next/link"
-// import { IoIosArrowForward } from "react-icons/io"
+import { IoIosArrowForward } from "react-icons/io"
 
 const page = () => {
     return (
@@ -23,12 +23,11 @@ const page = () => {
                     </div>
                 </div>
             </div>
-            {/* <div className="flex items-center max-w-7xl mx-auto w-full md:flex-row flex-col md:mt-24 mt-10 justify-center md:gap-16 gap-8">
+            <div className="flex items-center max-w-7xl mx-auto w-full md:flex-row flex-col md:mt-24 mt-10 justify-center md:gap-16 gap-8">
                 <div className="md:max-w-[50%] w-full px-5">
                     <h3 className='text-xl font-medium mb-2 text-zinc-700'>EZ Brand Builders</h3>
-                    <h2 className='md:text-4xl text-2xl font-medium text-zinc-900'>Your
-                        Partner in Digital Excellence</h2>
-                    <p className='text-zinc-600 md:mt-5 mt-3 md:text-'>Whether creating user-friendly websites, intuitive mobile applications, or maximizing your online presence with cutting-edge SEO techniques, we produce outcomes that promote operational effectiveness and business growth. With EZ Brand Builders on your side, you can successfully negotiate the complexities of the digital environment and keep your competitive edge in the market today.
+                    <h2 className="md:text-4xl text-2xl font-medium text-zinc-900">Your Partner in Digital Excellence</h2>
+                    <p className="text-zinc-600 md:mt-5 mt-3">Whether creating user-friendly websites, intuitive mobile applications, or maximizing your online presence with cutting-edge SEO techniques, we produce outcomes that promote operational effectiveness and business growth. With EZ Brand Builders on your side, you can successfully negotiate the complexities of the digital environment and keep your competitive edge in the market today.
                     </p>
                     <div className="flex md:items-center gap-7 md:flex-row flex-col mt-6">
                         <Link href={"/"} className='text-[#e69135] flex items-center gap-1 transition-all duration-500 hover:gap-2 hover:opacity-80'>Let's connect with us <IoIosArrowForward size={18} />
@@ -38,7 +37,7 @@ const page = () => {
                 <div className="md:max-w-[40%] w-full">
                     <Image src={"/about/DigitalExcellence.png"} width={1000} height={1000} className='w-full md:rounded-xl' alt='Image' />
                 </div>
-            </div> */}
+            </div>
 
             <div className="flex items-center max-w-7xl mx-auto w-full md:flex-row flex-col md:mt-24 mt-10 justify-center md:gap-16 gap-8">
                 <div className="md:max-w-[50%] w-full px-5">
