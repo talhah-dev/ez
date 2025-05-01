@@ -34,16 +34,16 @@ const Footer = () => {
                             </Link>
 
                             <div className="flex text-[#ffffffb4] items-center gap-6 md:mt-24 mt-8 justify-center md:justify-start">
-                                <Link href={"#"}>
+                                <Link href={"http://wa.me/+923201091220"} target="_blank">
                                     <FaWhatsapp size={26} className="hover:text-white transition-all duration-500" />
                                 </Link>
-                                <Link href={"#"}>
+                                <Link href={"https://www.linkedin.com/company/ez-brand-builders/"} target="_blank">
                                     <FaLinkedinIn size={24} className="hover:text-white transition-all duration-500" />
                                 </Link>
-                                <Link href={"#"}>
+                                <Link href={"https://www.instagram.com/ez.brandbuilders/"} target="_blank">
                                     <FaInstagram size={24} className="hover:text-white transition-all duration-500" />
                                 </Link>
-                                <Link href={"#"}>
+                                <Link href={"https://www.facebook.com/ez.brandbuilders/"} target="_blank">
                                     <FaFacebookF size={23} className="hover:text-white transition-all duration-500" />
                                 </Link>
                             </div>
@@ -54,15 +54,16 @@ const Footer = () => {
                                 <h4 className="text-lg font-medium text-zinc-200">Quick Links</h4>
                                 <ul className="mt-3.5 text-zinc-400 space-y-2.5">
                                     <li><Link href={"/"} className="hover:underline">Home</Link></li>
-                                    <li><Link href={"/"} className="hover:underline">Projects</Link></li>
-                                    <li><Link href={"/"} className="hover:underline">About Us</Link></li>
+                                    <li><Link href={"/about"} className="hover:underline">About Us</Link></li>
+                                    <li><Link href={"/services"} className="hover:underline">Services</Link></li>
+                                    <li><Link href={"/project"} className="hover:underline">Projects</Link></li>
                                     <li><Link href={"/contact"} className="hover:underline">Contact Us</Link></li>
                                 </ul>
                             </div>
                             <div className="">
                                 <h4 className="text-lg font-medium text-zinc-200">Get In Touch</h4>
                                 <ul className="mt-3.5 text-zinc-400 space-y-2.5">
-                                    <li><Link href={"#"} className="hover:underline flex items-center gap-2"><PiBuildings size={18} />Pakistan, Karachi</Link></li>
+                                    <li className=" flex items-center gap-2"><PiBuildings size={18} />Pakistan, Karachi</li>
                                     <li><Link href={"mailto:ezbrandbuilders@gmail.com"} className="hover:underline flex items-center gap-2"><IoMailOutline size={18} />ezbrandbuilders@gmail.com</Link></li>
                                     <li><Link href={"tel:+923201091220"} className="hover:underline flex items-center gap-1.5"><MdOutlinePermPhoneMsg size={18} />+92 320 1091 220</Link></li>
                                 </ul>

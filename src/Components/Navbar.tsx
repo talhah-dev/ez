@@ -17,9 +17,9 @@ const Navbar = () => {
                 </Link>
                 <ul className="md:flex hidden items-center justify-center gap-8">
                     <li><Link className="transition-all duration-500 hover:opacity-80" href={"/"}>Home</Link></li>
-                    <li><Link className="transition-all duration-500 hover:opacity-80" href={"/"}>About</Link></li>
+                    <li><Link className="transition-all duration-500 hover:opacity-80" href={"/about"}>About</Link></li>
                     <li><Link className="transition-all duration-500 hover:opacity-80" href={"/services"}>Services</Link></li>
-                    <li><Link className="transition-all duration-500 hover:opacity-80" href={"/"}>Projects</Link></li>
+                    <li><Link className="transition-all duration-500 hover:opacity-80" href={"/project"}>Projects</Link></li>
                     <li><Link className="transition-all duration-500 hover:opacity-80" href={"/contact"}>Contact Us</Link></li>
                 </ul>
                 <Link href={"/contact"} className="px-6 py-3 navBtn md:block hidden cursor-pointer transition-all duration-500 hover:opacity-80 rounded-full bg-[#191a20] font-medium">Get In Touch</Link>
@@ -33,9 +33,9 @@ const Navbar = () => {
                     <Image src={"/images/logo.png"} width={200} height={200} alt="logo" className={`h-10 w-auto transition-all duration-500 ${navbar ? "opacity-100" : "opacity-0"}`} />
                     <ul className='flex mt-12 px-5 flex-col space-y-7'>
                         <li><Link onClick={() => setNavbar(false)} href={"/"}>Home</Link></li>
-                        <li><Link onClick={() => setNavbar(false)} className="text-nowrap" href={"/"}>About Us</Link></li>
+                        <li><Link onClick={() => setNavbar(false)} className="text-nowrap" href={"/about"}>About Us</Link></li>
                         <li><Link onClick={() => setNavbar(false)} href={"/services"}>Services</Link></li>
-                        <li><Link onClick={() => setNavbar(false)} href={"/"}>Projects</Link></li>
+                        <li><Link onClick={() => setNavbar(false)} href={"/project"}>Projects</Link></li>
                         <li><Link onClick={() => setNavbar(false)} className="text-nowrap" href={"/contact"}>Contact us</Link></li>
                     </ul>
                 </div>

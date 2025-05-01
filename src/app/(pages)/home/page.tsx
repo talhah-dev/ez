@@ -23,7 +23,7 @@ const Home = () => {
                             <h1 className='md:text-6xl text-4xl leading-tight font-medium text-white'>Building Brands and Solve Tech Challenges</h1>
                             <p className='text-[#ABAEBB] md:mt-5 mt-3 md:text-lg'>We have become the top-notch software development services provider primarily due to our years of experience, creative solutions, and dedication to quality.</p>
                             <div className="flex items-center gap-7 md:flex-row flex-col mt-6">
-                                <Link href={"/contact"} className="px-8 py-2.5 text-zinc-200 bt cursor-pointer w-full md:w-auto transition-all duration-500 hover:opacity-80 rounded-full border border-[#f1a274] ">Get Started</Link>
+                                <Link href={"/contact"} className="px-8 text-center py-2.5 text-zinc-200 bt cursor-pointer w-full md:w-auto transition-all duration-500 hover:opacity-80 rounded-full border border-[#f1a274] ">Get Started</Link>
                                 <Link href={"/services"} className='text-zinc-200 flex items-center gap-1 transition-all duration-500 hover:gap-2 hover:opacity-80'>Explore Our Services <IoIosArrowForward size={18} />
                                 </Link>
                             </div>
@@ -78,8 +78,8 @@ const Home = () => {
                         <span className='text-zinc-800 font-medium'>Depth of Knowledge</span>: We use our expertise to guide our clients through the challenges of the digital age and assist them in achieving their strategic objectives.
 
                     </p>
-                    <div className="flex items-center gap-7 md:flex-row flex-col mt-6">
-                        <Link href={"/"} className='text-[#e69135] flex items-center gap-1 transition-all duration-500 hover:gap-2 hover:opacity-80'>Learn More About Us <IoIosArrowForward size={18} />
+                    <div className="flex md:items-center gap-7 md:flex-row flex-col mt-6">
+                        <Link href={"/about"} className='text-[#e69135] flex items-center gap-1 transition-all duration-500 hover:gap-2 hover:opacity-80'>Learn More About Us <IoIosArrowForward size={18} />
                         </Link>
                     </div>
                 </div>

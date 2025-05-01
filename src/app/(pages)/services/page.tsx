@@ -61,10 +61,50 @@ const page = () => {
                     </div>
                     <div className="relative flex items-center justify-center">
                         <Image src={"/images/stack2.svg"} width={500} className="w-full rounded-2xl" height={500} alt="stack" />
-                        <Image src={"/stack/ts.png"} width={500} className="w-full max-w-1/2 absolute" height={500} alt="stack" />
+                        <Image src={"/stack/typescript.png"} width={500} className="w-full max-w-1/2 absolute" height={500} alt="stack" />
 
                         <div className="absolute md:bottom-5 bottom-1 md:left-6 left-2 md:font-medium text-white">
                             TypeScript
+                        </div>
+                    </div>
+                    <div className="relative flex items-center justify-center">
+                        <Image src={"/images/stack3.svg"} width={500} className="w-full rounded-2xl" height={500} alt="stack" />
+                        <Image src={"/stack/node.png"} width={500} className="w-full max-w-1/2 absolute" height={500} alt="stack" />
+
+                        <div className="absolute md:bottom-5 bottom-1 md:left-6 left-2 md:font-medium text-white">
+                            Node Js
+                        </div>
+                    </div>
+                    <div className="relative flex items-center justify-center">
+                        <Image src={"/images/stack2.svg"} width={500} className="w-full rounded-2xl" height={500} alt="stack" />
+                        <Image src={"/stack/mongoose.png"} width={500} className="w-full max-w-1/2 absolute" height={500} alt="stack" />
+
+                        <div className="absolute md:bottom-5 bottom-1 md:left-6 left-2 md:font-medium text-white">
+                            Mongo DB
+                        </div>
+                    </div>
+                    <div className="relative flex items-center justify-center">
+                        <Image src={"/images/stack3.svg"} width={500} className="w-full rounded-2xl" height={500} alt="stack" />
+                        <Image src={"/stack/javascript.png"} width={500} className="w-full max-w-1/2 absolute" height={500} alt="stack" />
+
+                        <div className="absolute md:bottom-5 bottom-1 md:left-6 left-2 md:font-medium text-white">
+                            Javascript
+                        </div>
+                    </div>
+                    <div className="relative flex items-center justify-center">
+                        <Image src={"/images/stack1.svg"} width={500} className="w-full rounded-2xl" height={500} alt="stack" />
+                        <Image src={"/stack/firebase.webp"} width={500} className="w-full max-w-1/2 absolute" height={500} alt="stack" />
+
+                        <div className="absolute md:bottom-5 bottom-1 md:left-6 left-2 md:font-medium text-white">
+                            Firebase
+                        </div>
+                    </div>
+                    <div className="relative flex items-center justify-center">
+                        <Image src={"/images/stack1.svg"} width={500} className="w-full rounded-2xl" height={500} alt="stack" />
+                        <Image src={"/stack/tailwind_css.png"} width={500} className="w-full max-w-1/2 absolute" height={500} alt="stack" />
+
+                        <div className="absolute md:bottom-5 bottom-1 md:left-6 left-2 md:font-medium text-white">
+                            Tailwind CSS
                         </div>
                     </div>
                 </div>
