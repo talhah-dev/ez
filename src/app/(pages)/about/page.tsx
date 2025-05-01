@@ -1,14 +1,14 @@
 import BodyWrapper from "@/app/BodyWrapper"
-import Counter from "@/Components/Counter"
-import Navbar from "@/Components/Navbar"
+// import Counter from "@/Components/Counter"
+// import Navbar from "@/Components/Navbar"
 import Image from "next/image"
 import Link from "next/link"
-import { IoIosArrowForward } from "react-icons/io"
+// import { IoIosArrowForward } from "react-icons/io"
 
 const page = () => {
     return (
         <BodyWrapper>
-            <div className='bg-[url(/images/serviceBackground.svg)] bg-no-repeat w-full bg-center bg-cover'>
+            {/* <div className='bg-[url(/images/serviceBackground.svg)] bg-no-repeat w-full bg-center bg-cover'>
                 <Navbar />
                 <div className="overflow-hidden mt-10 md:mt-0  max-w-7xl mx-auto w-full  md:py-20 py-10">
                     <div className="flex max-w-4xl mx-auto w-full items-center justify-center text-center">
@@ -38,9 +38,9 @@ const page = () => {
                 <div className="md:max-w-[40%] w-full">
                     <Image src={"/about/DigitalExcellence.png"} width={1000} height={1000} className='w-full md:rounded-xl' alt='Image' />
                 </div>
-            </div>
+            </div> */}
 
-            {/* <div className="flex items-center max-w-7xl mx-auto w-full md:flex-row flex-col md:mt-24 mt-10 justify-center md:gap-16 gap-8">
+            <div className="flex items-center max-w-7xl mx-auto w-full md:flex-row flex-col md:mt-24 mt-10 justify-center md:gap-16 gap-8">
                 <div className="md:max-w-[50%] w-full px-5">
                     <h2 className='md:text-4xl text-2xl font-medium text-zinc-900'>Our Mission</h2>
                     <p className='text-zinc-600 md:mt-5 mt-3 md:text-'>Enabling businesses to achieve their goals through digital transformation, optimize their operations, and experience long-term success by transforming their ideas into reality.</p>
@@ -100,7 +100,7 @@ const page = () => {
                     </div>
 
                 </div>
-            </div> */}
+            </div>
 
 
             <div className="md:mt-16 mt-8"></div>
