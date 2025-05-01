@@ -3,7 +3,7 @@ import Counter from "@/Components/Counter"
 import Navbar from "@/Components/Navbar"
 import Image from "next/image"
 import Link from "next/link"
-// import { IoIosArrowForward } from "react-icons/io"
+import { IoIosArrowForward } from "react-icons/io"
 
 const page = () => {
     return (
@@ -31,10 +31,8 @@ const page = () => {
                     </p>
                     <div className="flex md:items-center gap-7 md:flex-row flex-col mt-6">
                         <div className="text-[#e69135] flex items-center gap-1 transition-all duration-500 hover:gap-2 hover:opacity-80">
-                            <Link href={"/contact"}>
-                                Let's connect with us
-                            </Link>
-                            {/* <IoIosArrowForward size={18} /> */}
+                            
+                            <IoIosArrowForward size={18} />
                         </div>
                     </div>
                 </div>
