@@ -23,7 +23,6 @@ const page = () => {
                     </div>
                 </div>
             </div>
-
             <div className="flex items-center max-w-7xl mx-auto w-full md:flex-row flex-col md:mt-24 mt-10 justify-center md:gap-16 gap-8">
                 <div className="md:max-w-[50%] w-full px-5">
                     <h3 className='text-xl font-medium mb-2 text-zinc-700'>EZ Brand Builders</h3>
@@ -41,7 +40,7 @@ const page = () => {
                 </div>
             </div>
 
-            <div className="flex items-center max-w-7xl mx-auto w-full md:flex-row flex-col md:mt-24 mt-10 justify-center md:gap-16 gap-8">
+            {/* <div className="flex items-center max-w-7xl mx-auto w-full md:flex-row flex-col md:mt-24 mt-10 justify-center md:gap-16 gap-8">
                 <div className="md:max-w-[50%] w-full px-5">
                     <h2 className='md:text-4xl text-2xl font-medium text-zinc-900'>Our Mission</h2>
                     <p className='text-zinc-600 md:mt-5 mt-3 md:text-'>Enabling businesses to achieve their goals through digital transformation, optimize their operations, and experience long-term success by transforming their ideas into reality.</p>
@@ -101,7 +100,7 @@ const page = () => {
                     </div>
 
                 </div>
-            </div>
+            </div> */}
 
 
             <div className="md:mt-16 mt-8"></div>
