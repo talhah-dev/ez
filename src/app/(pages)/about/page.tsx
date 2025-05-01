@@ -3,7 +3,7 @@ import Counter from "@/Components/Counter"
 import Navbar from "@/Components/Navbar"
 import Image from "next/image"
 import Link from "next/link"
-// import { IoIosArrowForward } from "react-icons/io"
+import { IoIosArrowForward } from "react-icons/io"
 
 const page = () => {
     return (
@@ -29,10 +29,12 @@ const page = () => {
                     <h2 className="md:text-4xl text-2xl font-medium text-zinc-900">Your Partner in Digital Excellence</h2>
                     <p className="text-zinc-600 md:mt-5 mt-3">Whether creating user-friendly websites, intuitive mobile applications, or maximizing your online presence with cutting-edge SEO techniques, we produce outcomes that promote operational effectiveness and business growth. With EZ Brand Builders on your side, you can successfully negotiate the complexities of the digital environment and keep your competitive edge in the market today.
                     </p>
-                    {/* <div className="flex md:items-center gap-7 md:flex-row flex-col mt-6">
-                        <Link href={"/"} className='text-[#e69135] flex items-center gap-1 transition-all duration-500 hover:gap-2 hover:opacity-80'>Let's connect with us <IoIosArrowForward size={18} />
+                    <div className="flex md:items-center gap-7 md:flex-row flex-col mt-6">
+                        <Link href="/contact" className='text-[#e69135] flex items-center gap-1 transition-all duration-500 hover:gap-2 hover:opacity-80'>
+                            Let's connect with us <IoIosArrowForward size={18} />
                         </Link>
-                    </div> */}
+
+                    </div>
                 </div>
                 <div className="md:max-w-[40%] w-full">
                     <Image src={"/about/DigitalExcellence.png"} width={1000} height={1000} className='w-full md:rounded-xl' alt='EZ Brand Builders digital marketing visual' />
