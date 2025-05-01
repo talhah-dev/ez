@@ -48,7 +48,7 @@ const page = () => {
                 </div>
                 <div className="md:max-w-[50%] w-full px-5">
                     <h2 className='md:text-4xl text-2xl font-medium text-zinc-900'>Our Vision</h2>
-                    <p className='text-zinc-600 md:mt-5 mt-3 md:text-'>{"To deliver innovative digital solutions that not only meet but also excel our client's expectations, automate process, and also challenging issues"}</p>
+                    <p className='text-zinc-600 md:mt-5 mt-3 md:text-'>{"To deliver innovative digital solutions that not only meet but also excel our client&rsquo;s expectations, automate process, and also challenging issues"}</p>
                 </div>
             </div>
 
