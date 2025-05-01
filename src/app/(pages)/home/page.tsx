@@ -104,16 +104,8 @@ const Home = () => {
                 </div>
             </div>
 
-            <div className="md:mt-20 mt-8 max-w-[70rem] w-full mx-auto md:p-5 p-3">
-                <h2 className='md:text-5xl text-3xl text-center font-medium text-zinc-900'>Our Clients</h2>
-                <p className='text-zinc-600 md:mt-5 mt-3 text-center'>
-                    We are proud to have worked with a diverse range of clients, from startups to Fortune 500 companies. Our clients trust us to deliver high-quality software solutions that meet their unique needs and help them achieve their business goals.
-                </p>
-
-                <div className="md:mt-16 mt-8">
-                    <Clients/>
-                </div>
-
+            <div className="md:mt-20 mt-8 w-full mx-auto md:p-5 p-3 bg-[#18181a79]">
+                <Clients />
             </div>
 
             <div className="md:mt-20 mt-8 max-w-[70rem] w-full mx-auto md:p-5 p-3">
@@ -123,7 +115,7 @@ const Home = () => {
                 </p>
 
                 <div className="md:mt-16 mt-8">
-                    
+
                 </div>
 
             </div>

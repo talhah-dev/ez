@@ -12,7 +12,7 @@ import { FaFacebookF } from "react-icons/fa";
 const Footer = () => {
     return (
         <>
-            <div className="bg-[url(/images/footer.svg)] overflow-hidden bg-center object-cover bg-no-repeat bg-cover object-center md:mt-20 mt-10">
+            <div className="bg-[url(/images/footer.svg)] overflow-hidden bg-center object-cover bg-no-repeat bg-cover object-center">
                 <div className="min-h-screen flex items-center justify-center flex-col py-10">
                     <div className="relative">
                         <span className="absolute right-[-60px] top-[-50px] h-[140px] w-[174px] rotate-[41deg] bg-[radial-gradient(54.45%_54.3%_at_46.68%_45.8%,#939FD7_0%,rgba(69,74,111,0.50)_46.81%,rgba(32,35,50,0.00)_100%)] blur-[10px]"></span>
