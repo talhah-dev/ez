@@ -1,6 +1,6 @@
 import BodyWrapper from "@/app/BodyWrapper"
-// import Counter from "@/Components/Counter"
-// import Navbar from "@/Components/Navbar"
+import Counter from "@/Components/Counter"
+import Navbar from "@/Components/Navbar"
 import Image from "next/image"
 import Link from "next/link"
 // import { IoIosArrowForward } from "react-icons/io"
@@ -8,7 +8,7 @@ import Link from "next/link"
 const page = () => {
     return (
         <BodyWrapper>
-            {/* <div className='bg-[url(/images/serviceBackground.svg)] bg-no-repeat w-full bg-center bg-cover'>
+            <div className='bg-[url(/images/serviceBackground.svg)] bg-no-repeat w-full bg-center bg-cover'>
                 <Navbar />
                 <div className="overflow-hidden mt-10 md:mt-0  max-w-7xl mx-auto w-full  md:py-20 py-10">
                     <div className="flex max-w-4xl mx-auto w-full items-center justify-center text-center">
@@ -23,7 +23,7 @@ const page = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex items-center max-w-7xl mx-auto w-full md:flex-row flex-col md:mt-24 mt-10 justify-center md:gap-16 gap-8">
+            {/* <div className="flex items-center max-w-7xl mx-auto w-full md:flex-row flex-col md:mt-24 mt-10 justify-center md:gap-16 gap-8">
                 <div className="md:max-w-[50%] w-full px-5">
                     <h3 className='text-xl font-medium mb-2 text-zinc-700'>EZ Brand Builders</h3>
                     <h2 className='md:text-4xl text-2xl font-medium text-zinc-900'>Your
@@ -59,7 +59,7 @@ const page = () => {
                         </h2>
                     </div>
                     <div className="md:max-w-[60%] w-full px-5">
-                        <p className='text-zinc-400 md:mt-5 mt-2 '>Stifftech Solutions is a cutting-edge application development company that personalizes and streamlines the development process. We help startups and businesses evolve, compete, and succeed in the Artificial Intelligence (AI) era. As the leading company, we provide software development services through human touch in every aspect that makes us unique.</p>
+                        <p className='text-zinc-400 md:mt-5 mt-2 '>EZ Brand Builders is a cutting-edge application development company that personalizes and streamlines the development process. We help startups and businesses evolve, compete, and succeed in the Artificial Intelligence (AI) era. As the leading company, we provide software development services through human touch in every aspect that makes us unique.</p>
                         <div className="flex mt-5">
                             <Link target="_blank" href={"http://wa.me/+923201091220"} className="px-8 block py-2.5 text-zinc-200 bt cursor-pointer w-auto transition-all duration-500 hover:opacity-80 rounded-full border border-[#f1a274] ">Send Us a Message</Link>
                         </div>
