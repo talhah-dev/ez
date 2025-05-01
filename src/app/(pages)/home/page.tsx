@@ -10,6 +10,7 @@ import { MdAutoGraph } from "react-icons/md";
 import Counter from '@/Components/Counter';
 import DevelopmentCard from '@/Components/DevelopmentCard';
 import Clients from '@/Components/Clients';
+import { FaArrowRightLong } from "react-icons/fa6";
 
 const Home = () => {
     return (
@@ -22,8 +23,8 @@ const Home = () => {
                             <h1 className='md:text-6xl text-4xl leading-tight font-medium text-white'>Building Brands and Solve Tech Challenges</h1>
                             <p className='text-[#ABAEBB] md:mt-5 mt-3 md:text-lg'>We have become the top-notch software development services provider primarily due to our years of experience, creative solutions, and dedication to quality.</p>
                             <div className="flex items-center gap-7 md:flex-row flex-col mt-6">
-                                <button className="px-8 py-2.5 text-zinc-200 bt cursor-pointer w-full md:w-auto transition-all duration-500 hover:opacity-80 rounded-full border border-[#f1a274] ">Get In Touch</button>
-                                <Link href={"/"} className='text-zinc-200 flex items-center gap-1 transition-all duration-500 hover:gap-2 hover:opacity-80'>Explore Our Services <IoIosArrowForward size={18} />
+                                <Link href={"/contact"} className="px-8 py-2.5 text-zinc-200 bt cursor-pointer w-full md:w-auto transition-all duration-500 hover:opacity-80 rounded-full border border-[#f1a274] ">Get Started</Link>
+                                <Link href={"/services"} className='text-zinc-200 flex items-center gap-1 transition-all duration-500 hover:gap-2 hover:opacity-80'>Explore Our Services <IoIosArrowForward size={18} />
                                 </Link>
                             </div>
                         </div>
@@ -38,7 +39,7 @@ const Home = () => {
                             <h3 className='text-zinc-100 capitalize text-lg font-medium flex items-center gap-2'><FaDesktop className='text-[#76ddd4]' size={20} />Web Design & Development</h3>
                             <p className='text-[#ABAEBB] text-[15px] mt-2 '>Your website is often the first impression you make. We build fast, mobile-friendly websites that help your visitors find what they need, trust your brand, and take action.</p>
                             <div className="flex">
-                                <Link href={"/"} className='text-zinc-100 mt-2 text-[15px] flex items-center gap-1 transition-all duration-500 hover:gap-2 hover:opacity-80'>Learn More <IoIosArrowForward size={18} />
+                                <Link href={"/services"} className='text-zinc-100 mt-2 text-[15px] flex items-center gap-1 transition-all duration-500 hover:gap-2 hover:opacity-80'>Learn More <IoIosArrowForward size={18} />
                                 </Link>
                             </div>
                         </div>
@@ -46,7 +47,7 @@ const Home = () => {
                             <h3 className='text-zinc-100 capitalize text-lg font-medium flex items-center gap-1'><MdPhoneIphone className='text-[#8b67c6]' size={20} />Web & Mobile App Development</h3>
                             <p className='text-[#ABAEBB] text-[15px] mt-2 '>We build smart, user-friendly apps that deliver practical solutions—whether it’s streamlining operations, improving customer experience, or bringing your ideas to life.</p>
                             <div className="flex">
-                                <Link href={"/"} className='text-zinc-100 mt-2 text-[15px] flex items-center gap-1 transition-all duration-500 hover:gap-2 hover:opacity-80'>Learn More <IoIosArrowForward size={18} />
+                                <Link href={"/services"} className='text-zinc-100 mt-2 text-[15px] flex items-center gap-1 transition-all duration-500 hover:gap-2 hover:opacity-80'>Learn More <IoIosArrowForward size={18} />
                                 </Link>
                             </div>
                         </div>
@@ -55,7 +56,7 @@ const Home = () => {
                             <p className='text-[#ABAEBB] text-[15px] mt-2 '>We craft tailored digital strategies that offer real solutions—helping you reach the right audience, build trust, and grow your business online.</p>
                             <p className='md:block hidden select-none'>&nbsp;</p>
                             <div className="flex">
-                                <Link href={"/"} className='text-zinc-100 mt-2 text-[15px] flex items-center gap-1 transition-all duration-500 hover:gap-2 hover:opacity-80'>Learn More <IoIosArrowForward size={18} />
+                                <Link href={"/services"} className='text-zinc-100 mt-2 text-[15px] flex items-center gap-1 transition-all duration-500 hover:gap-2 hover:opacity-80'>Learn More <IoIosArrowForward size={18} />
                                 </Link>
                             </div>
                         </div>
@@ -92,7 +93,7 @@ const Home = () => {
             </div>
 
             <div className="md:mt-24 mt-8 max-w-[70rem] w-full mx-auto md:p-5 p-3">
-                <h2 className='md:text-5xl text-3xl text-center font-medium text-zinc-900'>Our Development</h2>
+                <h2 className='md:text-5xl text-3xl text-center font-medium text-zinc-900'>Our Development Process</h2>
                 <p className='text-zinc-600 md:mt-5 mt-3 text-center'>Exceptional development. Seamless integration. Delighted developers. Increased adoption.</p>
                 <div className="grid md:mt-12 mt-8 md:grid-cols-2 grid-cols-1 md:gap-3 gap-2">
                     <Image src={"/images/development-card-1.jpg"} alt='develoment card' className='w-full md:block hidden rounded-xl md:col-span-2' width={1000} height={1000} />
@@ -108,19 +109,42 @@ const Home = () => {
                 <Clients />
             </div>
 
-            <div className="md:mt-20 mt-8 max-w-[70rem] w-full mx-auto md:p-5 p-3">
-                <h2 className='md:text-5xl text-3xl text-center font-medium text-zinc-900'>Our Projects</h2>
+            <div className="md:mt-20 mt-8 max-w-7xl w-full mx-auto md:p-5 p-3">
+                <h2 className='md:text-5xl text-3xl text-center font-medium text-zinc-900'>Recent Projects</h2>
                 <p className='text-zinc-600 md:mt-5 mt-3 text-center max-w-4xl mx-auto'>
                     We have successfully delivered a wide range of projects across various industries, including e-commerce, healthcare, finance, and more. Our portfolio showcases our expertise in web and mobile app development, digital marketing, and custom software solutions.
                 </p>
 
-                <div className="md:mt-16 mt-8">
+                <div className="grid md:mt-12 mt-8 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-5 gap-2">
+                    <div className="w-full md:h-[18.5rem] rounded-2xl overflow-hidden">
+                        <Image src={"/projects/project1.jpeg"} width={1000} height={1000} className='w-full transition-all duration-500 hover:scale-105 rounded-2xl' alt='project' />
+                    </div>
+                    <div className="w-full md:h-[18.5rem] rounded-2xl overflow-hidden">
+                        <Image src={"/projects/project2.jpeg"} width={1000} height={1000} className='w-full transition-all duration-500 hover:scale-105 rounded-2xl' alt='project' />
+                    </div>
+                    <div className="w-full md:h-[18.5rem] rounded-2xl overflow-hidden">
+                        <Image src={"/projects/project3.jpeg"} width={1000} height={1000} className='w-full transition-all duration-500 hover:scale-105 rounded-2xl' alt='project' />
+                    </div>
+                    <div className="w-full md:h-[18.5rem] rounded-2xl overflow-hidden">
+                        <Image src={"/projects/project4.jpeg"} width={1000} height={1000} className='w-full transition-all duration-500 hover:scale-105 rounded-2xl' alt='project' />
+                    </div>
+                    <div className="w-full md:h-[18.5rem] rounded-2xl overflow-hidden">
+                        <Image src={"/projects/project5.jpeg"} width={1000} height={1000} className='w-full transition-all duration-500 hover:scale-105 rounded-2xl' alt='project' />
+                    </div>
+                    <div className="w-full md:h-[18.5rem] rounded-2xl overflow-hidden">
+                        <Image src={"/projects/project1.jpeg"} width={1000} height={1000} className='w-full transition-all duration-500 hover:scale-105 rounded-2xl' alt='project' />
+                    </div>
+                </div>
 
+                <div className="flex items-center justify-center mt-12">
+                    <Link href={"/project"} className='flex items-center gap-2 text-gray-800 hover:underline'>
+                        View More <FaArrowRightLong />
+                    </Link>
                 </div>
 
             </div>
 
-
+            <div className="md:mt-16 mt-8"></div>
 
         </BodyWrapper>
     );

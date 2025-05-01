@@ -42,14 +42,14 @@ const Counter = () => {
 
             animateCount(setCount1, 100, 2);
             animateCount(setCount2, 300, 2.5);
-            animateCount(setCount3, 90, 2);
-            animateCount(setCount4, 95, 2);
+            animateCount(setCount3, 95, 2);
+            animateCount(setCount4, 98, 2);
         }
     }, [isInView]);
 
     return (
         <div ref={ref} className="max-w-7xl w-full mx-auto p-5 grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-y-10">
-            <motion.div 
+            <motion.div
                 className="w-full flex-col flex items-center justify-center gap-2 text-center"
                 initial={{ opacity: 0, y: 20 }}
                 animate={controls1}
@@ -58,7 +58,7 @@ const Counter = () => {
                 <p className="text-gray-500">Happy Clients</p>
             </motion.div>
 
-            <motion.div 
+            <motion.div
                 className="w-full flex-col flex items-center justify-center gap-2 text-center"
                 initial={{ opacity: 0, y: 20 }}
                 animate={controls2}
@@ -67,7 +67,7 @@ const Counter = () => {
                 <p className="text-gray-500">Solutions Proposed</p>
             </motion.div>
 
-            <motion.div 
+            <motion.div
                 className="w-full flex-col flex items-center justify-center gap-2 text-center"
                 initial={{ opacity: 0, y: 20 }}
                 animate={controls3}
@@ -76,7 +76,7 @@ const Counter = () => {
                 <p className="text-gray-500">Clients Retention Rate</p>
             </motion.div>
 
-            <motion.div 
+            <motion.div
                 className="w-full flex-col flex items-center justify-center gap-2 text-center"
                 initial={{ opacity: 0, y: 20 }}
                 animate={controls4}
