@@ -3,7 +3,7 @@ import Counter from "@/Components/Counter"
 import Navbar from "@/Components/Navbar"
 import Image from "next/image"
 import Link from "next/link"
-import { IoIosArrowForward } from "react-icons/io"
+// import { IoIosArrowForward } from "react-icons/io"
 
 const page = () => {
     return (
@@ -34,7 +34,7 @@ const page = () => {
                             <Link href={"/contact"}>
                                 Let's connect with us
                             </Link>
-                            <IoIosArrowForward size={18} />
+                            {/* <IoIosArrowForward size={18} /> */}
                         </div>
                     </div>
                 </div>
