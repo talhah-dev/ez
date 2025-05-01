@@ -3,7 +3,6 @@ import BodyWrapper from "@/app/BodyWrapper"
 import Counter from "@/Components/Counter"
 import Navbar from "@/Components/Navbar"
 import Link from "next/link"
-import { IoIosArrowForward } from "react-icons/io"
 
 const page = () => {
     return (
