@@ -1,3 +1,4 @@
+"use client"
 import BodyWrapper from '@/app/BodyWrapper';
 import Navbar from '@/Components/Navbar';
 import Image from 'next/image';

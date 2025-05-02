@@ -1,4 +1,5 @@
 "use client"
+import { getFirestore, collection, addDoc } from "firebase/firestore"
 import BodyWrapper from "@/app/BodyWrapper"
 import Navbar from "@/Components/Navbar"
 import Image from "next/image"
@@ -8,6 +9,8 @@ import { CgWebsite } from "react-icons/cg"
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { GiWorld } from "react-icons/gi"
 import { IoLogoInstagram } from "react-icons/io"
+import { app } from "@/lib/firebase"
+import { toast } from "react-toastify"
 
 const Services = [
     { name: "Website Development", value: "websiteDevelopment" },
@@ -28,7 +31,18 @@ const SocialMedia = [
     { name: "Others", value: "other", icon: <GiWorld /> },
 ];
 
+const firestore = getFirestore(app)
+
 const Page = () => {
+
+    const [data, setData] = useState({
+        name: "",
+        email: "",
+        number: "",
+        budgetOption: "",
+        customBudget: "",
+        message: "",
+    })
 
     const [services, setServices] = useState<Record<string, boolean>>({
         websiteDevelopment: false,
@@ -48,6 +62,57 @@ const Page = () => {
         website: false,
         other: false
     })
+
+    const formhandler = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+
+        if (!data.name || !data.email || !data.number || !data.message || data.budgetOption === "custom" ? !data.customBudget : !data.budgetOption || Object.keys(services).filter((key) => services[key]).length === 0 || Object.keys(social).filter((key) => social[key]).length === 0 ) {
+            toast.error("Please fill all the  fields");
+            return;
+        }
+
+        try {
+            const docRef = await addDoc(collection(firestore, "clients"), {
+                name: data.name,
+                email: data.email,
+                number: data.number,
+                budget: data.budgetOption === "custom" ? data.customBudget : data.budgetOption,
+                message: data.message,
+                services: Object.keys(services).filter((key) => services[key]),
+                socialMedia: Object.keys(social).filter((key) => social[key]),
+            });
+            toast.success("Your request has been submitted successfully!");
+
+            setData({
+                name: "",
+                email: "",
+                number: "",
+                budgetOption: "",
+                customBudget: "",
+                message: "",
+            })
+            setServices({
+                websiteDevelopment: false,
+                mobileApplication: false,
+                digitalMarketing: false,
+                branding: false,
+                graphicDesign: false,
+                contentWriting: false,
+                socialMediaMarketing: false,
+                seo: false,
+            })
+            setSocial({
+                facebook: false,
+                linkedin: false,
+                instagram: false,
+                website: false,
+                other: false
+            })
+
+        } catch (e) {
+            console.error("Error adding document: ", e);
+        }
+    }
 
     return (
         <BodyWrapper>
@@ -85,22 +150,27 @@ const Page = () => {
                     <div className="md:max-w-[60%] w-full">
                         <div className="relative rounded-2xl md:px-8 px-4  bg-[#0B0C0E] pt-16 pb-8 flex justify-center items-center flex-col">
                             <Image src={"/images/logoIcon.png"} width={300} height={300} className="mx-auto absolute -top-12 h-28 w-auto" alt="box" />
-                            <form action="" className="grid md:grid-cols-2 grid-cols-1 gap-x-4 gap-y-6 mt-6">
+                            <form onSubmit={formhandler} action="" className="grid md:grid-cols-2 grid-cols-1 gap-x-4 gap-y-6 mt-6">
                                 <div className="">
                                     <label htmlFor="name" className="text-13 text-zinc-300 text-sm font-medium leading-none tracking-tight text-gray-94">Name</label>
-                                    <input type="text" name="name" id="name" placeholder="Muhammad" className="remove-autocomplete-styles appearance-none placeholder:text-zinc-700 transition-colors duration-200 focus:outline-none mt-1 bg-[#04040659] w-full border tracking-tight placeholder:tracking-tight h-11 rounded px-3 border-[#41434D] hover:border-[#707280] focus:border-[#A3A6B2] text-gray-94 text-white" />
+                                    <input value={data.name} onChange={(e) => setData(prev => ({ ...prev, name: e.target.value }))}
+                                        type="text" name="name" id="name" placeholder="Muhammad" className="remove-autocomplete-styles appearance-none placeholder:text-zinc-700 transition-colors duration-200 focus:outline-none mt-1 bg-[#04040659] w-full border tracking-tight placeholder:tracking-tight h-11 rounded px-3 border-[#41434D] hover:border-[#707280] focus:border-[#A3A6B2] text-gray-94 text-white" />
                                 </div>
                                 <div className="">
                                     <label htmlFor="email" className="text-13 text-zinc-300 text-sm font-medium leading-none tracking-tight text-gray-94">E-Mail</label>
-                                    <input type="email" name="Email" id="email" placeholder="abc@gmail.com" className="remove-autocomplete-styles text-white appearance-none  transition-colors duration-200 focus:outline-none mt-1 bg-[#04040659] w-full border tracking-tight placeholder:tracking-tight h-11 rounded px-3 border-[#41434D] hover:border-[#707280] focus:border-[#A3A6B2] text-gray-94 placeholder:text-zinc-700" />
+                                    <input value={data.email} onChange={(e) => setData(prev => ({ ...prev, email: e.target.value }))}
+                                        type="email" name="Email" id="email" placeholder="abc@gmail.com" className="remove-autocomplete-styles text-white appearance-none  transition-colors duration-200 focus:outline-none mt-1 bg-[#04040659] w-full border tracking-tight placeholder:tracking-tight h-11 rounded px-3 border-[#41434D] hover:border-[#707280] focus:border-[#A3A6B2] text-gray-94 placeholder:text-zinc-700" />
                                 </div>
                                 <div className="">
                                     <label htmlFor="number" className="text-13 text-zinc-300 text-sm font-medium leading-none tracking-tight text-gray-94">Phone / Whatsapp Number</label>
-                                    <input type="number" name="number" id="number" placeholder="0300 0000 000" className="remove-autocomplete-styles text-white appearance-none  transition-colors duration-200 focus:outline-none mt-1 bg-[#04040659] w-full border tracking-tight placeholder:tracking-tight h-11 rounded px-3 border-[#41434D] hover:border-[#707280] focus:border-[#A3A6B2] text-gray-94 placeholder:text-zinc-700" />
+                                    <input value={data.number} onChange={(e) => setData(prev => ({ ...prev, number: e.target.value }))}
+                                        type="number" name="number" id="number" placeholder="0300 0000 000" className="remove-autocomplete-styles text-white appearance-none  transition-colors duration-200 focus:outline-none mt-1 bg-[#04040659] w-full border tracking-tight placeholder:tracking-tight h-11 rounded px-3 border-[#41434D] hover:border-[#707280] focus:border-[#A3A6B2] text-gray-94 placeholder:text-zinc-700" />
                                 </div>
                                 <div className="">
                                     <p className="text-13 mt-1 text-zinc-300 text-sm font-medium leading-none tracking-tight text-gray-94 block">Project budget (USD)</p>
-                                    <select id="countries" className="mt-2.5 bg-[#04040659] border border-[#41434D] text-sm rounded text-zinc-300 block w-full p-2.5">
+                                    <select onChange={(e) => setData(prev => ({ ...prev, budgetOption: e.target.value }))}
+                                        value={data.budgetOption}
+                                        id="countries" className="mt-2.5 bg-[#04040659] border border-[#41434D] text-sm rounded text-zinc-300 block w-full p-2.5">
                                         <option className="bg-black py-1 block" value="">Select</option>
                                         <option className="bg-black py-1 block" value="50">$50</option>
                                         <option className="bg-black py-1 block" value="100-200">$100 - $200</option>
@@ -109,6 +179,14 @@ const Page = () => {
                                         <option className="bg-black py-1 block" value="600-700">$600 - $700</option>
                                         <option className="bg-black py-1 block" value="custom">Custom</option>
                                     </select>
+                                    {data.budgetOption === "custom" && (
+                                        <input
+                                            type="text"
+                                            placeholder="Enter your budget"
+                                            className="mt-2 w-full bg-[#04040659] border border-[#41434D] text-white p-2.5 rounded"
+                                            onChange={(e) => setData(prev => ({ ...prev, customBudget: e.target.value }))}
+                                        />
+                                    )}
                                 </div>
                                 <div className="md:col-span-2">
                                     <label htmlFor="" className="text-13 text-zinc-300 text-sm font-medium leading-none tracking-tight text-gray-94">I’m interested in...</label>
@@ -122,7 +200,7 @@ const Page = () => {
                                 </div>
                                 <div className="md:col-span-2 col-span-1">
                                     <label htmlFor="help" className="text-13 text-zinc-300 text-sm font-medium leading-none tracking-tight text-gray-94">Tell us more about your project</label>
-                                    <textarea name="help" id="help" placeholder="Something about your great idea" className=" text-white appearance-none  transition-colors duration-200 focus:outline-none mt-1 bg-[#04040659] w-full border tracking-tight placeholder:tracking-tight rounded p-3 border-[#41434D] hover:border-[#707280] focus:border-[#A3A6B2] text-gray-94 placeholder:text-zinc-700" rows={6}></textarea>
+                                    <textarea value={data.message} onChange={(e) => setData(prev => ({ ...prev, message: e.target.value }))} name="help" id="help" placeholder="Something about your great idea" className=" text-white appearance-none  transition-colors duration-200 focus:outline-none mt-1 bg-[#04040659] w-full border tracking-tight placeholder:tracking-tight rounded p-3 border-[#41434D] hover:border-[#707280] focus:border-[#A3A6B2] text-gray-94 placeholder:text-zinc-700" rows={6}></textarea>
                                 </div>
                                 <div className="md:col-span-2">
                                     <label htmlFor="" className="text-13 text-zinc-300 text-sm font-medium leading-none tracking-tight text-gray-94">How did you find us?</label>
