@@ -66,13 +66,13 @@ const Page = () => {
     const formhandler = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
 
-        if (!data.name || !data.email || !data.number || !data.message || data.budgetOption === "custom" ? !data.customBudget : !data.budgetOption || Object.keys(services).filter((key) => services[key]).length === 0 || Object.keys(social).filter((key) => social[key]).length === 0 ) {
+        if (!data.name || !data.email || !data.number || !data.message || data.budgetOption === "custom" ? !data.customBudget : !data.budgetOption || Object.keys(services).filter((key) => services[key]).length === 0 || Object.keys(social).filter((key) => social[key]).length === 0) {
             toast.error("Please fill all the  fields");
             return;
         }
 
         try {
-            const docRef = await addDoc(collection(firestore, "clients"), {
+            await addDoc(collection(firestore, "clients"), {
                 name: data.name,
                 email: data.email,
                 number: data.number,
