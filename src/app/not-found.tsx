@@ -1,11 +1,6 @@
 import BodyWrapper from '@/app/BodyWrapper';
 import Navbar from '@/Components/Navbar';
-import Image from 'next/image';
 import Link from 'next/link';
-import { IoIosArrowForward } from "react-icons/io";
-import { FaDesktop } from "react-icons/fa";
-import { MdPhoneIphone } from "react-icons/md";
-import { MdAutoGraph } from "react-icons/md";
 
 const Page = () => {
     return (
