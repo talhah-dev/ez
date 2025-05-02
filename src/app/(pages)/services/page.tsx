@@ -6,7 +6,7 @@ import ServicesCard from "@/Components/ServicesCard"
 import SERVICES from "../../../Data/Services"
 import Image from "next/image"
 
-const page = () => {
+const Page = () => {
     return (
         <BodyWrapper>
             <div className='bg-[url(/images/serviceBackground.svg)] bg-no-repeat w-full bg-center bg-cover'>
@@ -116,4 +116,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page

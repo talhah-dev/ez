@@ -32,7 +32,7 @@ const BodyWrapper = ({ children }: BodyWrapperProps) => {
             <Suspense fallback={<div />}>
                 <div className="bg-[#e5e5e6]">
                     {children}
-                <Footer />
+                    <Footer />
                 </div>
             </Suspense>
         </>

@@ -4,7 +4,7 @@ import Counter from "@/Components/Counter"
 import Navbar from "@/Components/Navbar"
 import Link from "next/link"
 
-const page = () => {
+const Page = () => {
     return (
         <BodyWrapper>
             <div className='bg-[url(/images/serviceBackground.svg)] bg-no-repeat w-full bg-center bg-cover'>
@@ -104,4 +104,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page

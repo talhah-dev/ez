@@ -28,7 +28,7 @@ const SocialMedia = [
     { name: "Others", value: "other", icon: <GiWorld /> },
 ];
 
-const page = () => {
+const Page = () => {
 
     const [services, setServices] = useState<Record<string, boolean>>({
         websiteDevelopment: false,
@@ -147,4 +147,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page

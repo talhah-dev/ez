@@ -12,7 +12,7 @@ import DevelopmentCard from '@/Components/DevelopmentCard';
 import Clients from '@/Components/Clients';
 import { FaArrowRightLong } from "react-icons/fa6";
 
-const Home = () => {
+const Page = () => {
     return (
         <BodyWrapper>
             <div className='bg-[url(/images/home_bg.svg)] min-h-screen bg-no-repeat w-full bg-center bg-cover'>
@@ -150,4 +150,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default Page;

@@ -3,7 +3,7 @@ import Navbar from "@/Components/Navbar"
 import Image from "next/image"
 import Link from "next/link"
 
-const page = () => {
+const Page = () => {
     return (
         <BodyWrapper>
             <div className='bg-[url(/images/projectBg.svg)] md:min-h-[calc(100vh-8rem)] overflow-hidden relative bg-no-repeat w-full bg-center bg-cover'>
@@ -79,4 +79,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page
