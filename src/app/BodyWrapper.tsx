@@ -28,7 +28,7 @@ const BodyWrapper = ({ children }: BodyWrapperProps) => {
 
     return (
         <>
-            {/* <Loader /> */}
+            <Loader />
             <Suspense fallback={<div />}>
                 <div className="bg-[#e5e5e6]">
                     {children}
