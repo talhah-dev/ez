@@ -18,7 +18,7 @@ const Page = () => {
             <div className='bg-[url(/images/home_bg.svg)] min-h-screen bg-no-repeat w-full bg-center bg-cover'>
                 <Navbar />
                 <div className="overflow-hidden mt-10 md:mt-0  max-w-7xl mx-auto w-full">
-                    <div className="flex items-center md:flex-row flex-col min-h-[calc(100vh-6rem)] justify-between md:gap-16 gap-8">
+                    <div className="flex items-center md:flex-row flex-col min-h-[calc(100vh-6rem)] justify-between md:gap-16 gap-5">
                         <div className="md:max-w-[50%] w-full px-5">
                             <h1 className='md:text-6xl text-4xl leading-tight font-medium text-white'>Building Brands and Solve Tech Challenges</h1>
                             <p className='text-[#ABAEBB] md:mt-5 mt-3 md:text-lg'>We have become the top-notch software development services provider primarily due to our years of experience, creative solutions, and dedication to quality.</p>
@@ -29,7 +29,7 @@ const Page = () => {
                             </div>
                         </div>
                         <div className="md:max-w-[50%] w-full">
-                            <Image src={"/images/home.png"} width={1000} height={1000} className='w-full animate-[spin_200s_linear_infinite]' alt='Image' />
+                            <Image src={"/images/check3.png"} width={1000} height={1000} className='w-full md:-scale-x-100 animate-[spin_200s_ linear_infinite]' alt='Image' />
                         </div>
                     </div>
                     <h2 className='md:text-4xl text-3xl mt-10 leading-tight font-medium text-white capitalize px-5'>Our Top Services</h2>
