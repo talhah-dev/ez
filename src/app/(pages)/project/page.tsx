@@ -19,7 +19,7 @@ const Page = () => {
                 </div>
                 <div className="overflow-hidden relative z-10 mt-10 md:mt-0  max-w-7xl flex items-center md:min-h-[calc(100vh-14rem)] justify-center mx-auto w-full  md:py-20 py-10">
                     <div className="flex max-w-2xl mx-auto w-full items-center justify-center text-center">
-                        <div className="px-5">
+                        <div className="px-4">
                             <h1 className='md:text-5xl text-4xl leading-tight font-medium text-white'>Recent Projects
                             </h1>
                             <p className='text-[#ABAEBB] md:mt-5 mt-3 md:text-lg'>

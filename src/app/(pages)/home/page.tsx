@@ -29,7 +29,7 @@ const Page = () => {
                             </div>
                         </div>
                         <div className="md:max-w-[50%] w-full">
-                            <Image src={"/images/check3.png"} width={1000} height={1000} className='w-full md:-scale-x-100 animate-[spin_200s_ linear_infinite]' alt='Image' />
+                            <Image src={"/images/builders.png"} width={1000} height={1000} className='w-full md:-scale-x-100 animate-[spin_200s_ linear_infinite]' alt='Image' />
                         </div>
                     </div>
                     <h2 className='md:text-4xl text-3xl mt-10 leading-tight font-medium text-white capitalize px-5'>Our Top Services</h2>

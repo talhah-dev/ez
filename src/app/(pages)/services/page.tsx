@@ -11,7 +11,7 @@ const Page = () => {
         <BodyWrapper>
             <div className='bg-[url(/images/serviceBackground.svg)] bg-no-repeat w-full bg-center bg-cover'>
                 <Navbar />
-                <div className="overflow-hidden mt-10 md:mt-0  max-w-7xl mx-auto w-full  md:py-20 py-10">
+                <div className="overflow-hidden mt-10 md:mt-0  max-w-7xl mx-auto w-full  md:py-20 py-10 px-4">
                     <div className="flex max-w-4xl mx-auto w-full items-center justify-center text-center">
                         <div className="">
                             <h1 className='md:text-5xl text-4xl leading-tight font-medium text-white'>Our Professional Services
