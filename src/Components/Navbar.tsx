@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useState } from "react";
 import { HiMiniBars3CenterLeft } from "react-icons/hi2";
 import { IoClose } from "react-icons/io5";
+import { TextEffectThree } from "react-text-animate";
 
 const Navbar = () => {
 
@@ -16,11 +17,31 @@ const Navbar = () => {
                     <Image src={"/images/logo.png"} width={200} height={200} className="w-full md:h-10 h-8" alt="Logo" />
                 </Link>
                 <ul className="md:flex hidden items-center justify-center gap-8">
-                    <li><Link className="transition-all duration-500 hover:opacity-80" href={"/"}>Home</Link></li>
-                    <li><Link className="transition-all duration-500 hover:opacity-80" href={"/about"}>About</Link></li>
-                    <li><Link className="transition-all duration-500 hover:opacity-80" href={"/services"}>Services</Link></li>
-                    <li><Link className="transition-all duration-500 hover:opacity-80" href={"/project"}>Projects</Link></li>
-                    <li><Link className="transition-all duration-500 hover:opacity-80" href={"/contact"}>Contact Us</Link></li>
+                    <li>
+                        <Link href={"/"}>
+                            <TextEffectThree animationDuration={0.4} text="Home" />
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href={"/about"}>
+                            <TextEffectThree animationDuration={0.4} text="About" />
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href={"/services"}>
+                            <TextEffectThree animationDuration={0.4} text="Services" />
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href={"/project"}>
+                            <TextEffectThree animationDuration={0.4} text="Project" />
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href={"/contact"}>
+                            <TextEffectThree animationDuration={0.4} text="Contact" />
+                        </Link>
+                    </li>
                 </ul>
                 <Link href={"/contact"} className="px-6 py-3 navBtn md:block hidden cursor-pointer transition-all duration-500 hover:opacity-80 rounded-full bg-[#191a20] font-medium">Get In Touch</Link>
                 <HiMiniBars3CenterLeft onClick={() => setNavbar(true)} size={25} className="rotate-180 md:hidden text-zinc-200" />

@@ -12,6 +12,7 @@ import Counter from '@/Components/Counter';
 import DevelopmentCard from '@/Components/DevelopmentCard';
 import Clients from '@/Components/Clients';
 import { FaArrowRightLong } from "react-icons/fa6";
+import { TextEffectOne, TextEffectThree } from 'react-text-animate';
 
 const Page = () => {
     return (
@@ -21,11 +22,19 @@ const Page = () => {
                 <div className="overflow-hidden mt-10 md:mt-0  max-w-7xl mx-auto w-full">
                     <div className="flex items-center md:flex-row flex-col min-h-[calc(100vh-6rem)] justify-between md:gap-16 gap-5">
                         <div className="md:max-w-[50%] w-full px-5">
-                            <h1 className='md:text-6xl text-4xl leading-tight font-medium text-white'>Building Brands and Solve Tech Challenges</h1>
-                            <p className='text-[#ABAEBB] md:mt-5 mt-3 md:text-lg'>We have become the top-notch software development services provider primarily due to our years of experience, creative solutions, and dedication to quality.</p>
+                            <TextEffectOne wrapperElement="h1"
+                                staggerDuration={0.01} animateOnce className='md:text-7xl text-4xl leading-tight font-medium text-white' text="Building Brands" />
+                            <TextEffectOne wrapperElement="h1"
+                                staggerDuration={0.01} animateOnce className='md:text-7xl text-4xl leading-tight font-medium text-white' text="and Solve Tech" />
+                            <TextEffectOne wrapperElement="h1"
+                                staggerDuration={0.01} animateOnce className='md:text-7xl text-4xl leading-tight font-medium text-white' text="Challenges" />
+                            <TextEffectOne wrapperElement="p"
+                                staggerDuration={0.005} initialDelay={0.01} animateOnce className='text-[#ABAEBB] md:mt-5 mt-3 md:text-lg' text="We have become the top-notch software development services provider primarily due to our ." />
                             <div className="flex items-center gap-7 md:flex-row flex-col mt-6">
                                 <Link href={"/contact"} className="px-8 text-center py-2.5 text-zinc-200 bt cursor-pointer w-full md:w-auto transition-all duration-500 hover:opacity-80 rounded-full border border-[#f1a274] ">Get Started</Link>
-                                <Link href={"/services"} className='text-zinc-200 flex items-center gap-1 transition-all duration-500 hover:gap-2 hover:opacity-80'>Explore Our Services <IoIosArrowForward size={18} />
+                                <Link href={"/services"} className='text-zinc-200 flex items-center gap-1 transition-all duration-500 hover:gap-2 hover:opacity-80'>
+                                    <TextEffectThree animationDuration={0.2} className='text-zinc-200' text="Explore Our Services" />
+                                    <IoIosArrowForward size={18} />
                                 </Link>
                             </div>
                         </div>
@@ -33,9 +42,9 @@ const Page = () => {
                             <Image src={"/images/builders.png"} width={1000} height={1000} className='w-full md:-scale-x-100 animate-[spin_200s_ linear_infinite]' alt='Image' />
                         </div>
                     </div>
-                    <h2 className='md:text-4xl text-3xl mt-10 leading-tight font-medium text-white capitalize px-5'>Our Top Services</h2>
+                    <TextEffectOne wrapperElement="h2"
+                        staggerDuration={0.02} animateOnce className='md:text-4xl text-3xl mt-10 leading-tight font-medium text-white capitalize px-5' text="Our Top Services" />
                     <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-14 gap-8 md:mt-8 mt-6 md:mb-14 mb-8 px-5">
-
                         <div className="w-full">
                             <h3 className='text-zinc-100 capitalize text-lg font-medium flex items-center gap-2'><FaDesktop className='text-[#76ddd4]' size={20} />Web Design & Development</h3>
                             <p className='text-[#ABAEBB] text-[15px] mt-2 '>Your website is often the first impression you make. We build fast, mobile-friendly websites that help your visitors find what they need, trust your brand, and take action.</p>
@@ -68,7 +77,8 @@ const Page = () => {
 
             <div className="flex items-center max-w-7xl mx-auto w-full md:flex-row flex-col md:mt-24 mt-10 justify-center md:gap-16 gap-8">
                 <div className="md:max-w-[50%] w-full px-5">
-                    <h2 className='md:text-5xl text-3xl font-medium text-zinc-900'>Why Choose Us?</h2>
+                    <TextEffectOne initialDelay={0.1} wrapperElement="h2"
+                        staggerDuration={0.02} animateOnce className='md:text-5xl text-3xl font-medium text-zinc-900' text="Why Choose Us?" />
                     <p className='text-zinc-600 md:mt-5 mt-3 md:text-'><span className='text-zinc-800 font-medium'>Reliable Solutions</span>: EZ Brand Builders understands that every business is unique. We serve them with innovative solutions that help them overcome business challenges.
                         <br />
                         <span className='text-zinc-800 font-medium'>Client-Centric Approach</span>: We always ensure our client’s mission and work accordingly to drive business growth.
@@ -94,8 +104,10 @@ const Page = () => {
             </div>
 
             <div className="md:mt-24 mt-8 max-w-[70rem] w-full mx-auto md:p-5 p-3">
-                <h2 className='md:text-5xl text-3xl text-center font-medium text-zinc-900'>Our Development Process</h2>
-                <p className='text-zinc-600 md:mt-5 mt-3 text-center'>Exceptional development. Seamless integration. Delighted developers. Increased adoption.</p>
+                <TextEffectOne initialDelay={0.1} wrapperElement="h2"
+                    staggerDuration={0.02} animateOnce className='md:text-5xl text-3xl text-center font-medium text-zinc-900' text="Our Development Process" />
+                <TextEffectOne initialDelay={0.1} wrapperElement="p"
+                    staggerDuration={0.005} animateOnce className='text-zinc-600 md:mt-5 mt-3 text-center' text="Exceptional development. Seamless integration. Delighted developers. Increased adoption." />
                 <div className="grid md:mt-12 mt-8 md:grid-cols-2 grid-cols-1 md:gap-3 gap-2">
                     <Image src={"/images/development-card-1.jpg"} alt='develoment card' className='w-full md:block hidden rounded-xl md:col-span-2' width={1000} height={1000} />
                     <Image src={"/images/development-card-1-sm.jpg"} alt='develoment card' className='w-full md:hidden block rounded-xl' width={1000} height={1000} />
@@ -111,11 +123,10 @@ const Page = () => {
             </div>
 
             <div className="md:mt-20 mt-8 max-w-7xl w-full mx-auto md:p-5 p-3">
-                <h2 className='md:text-5xl text-3xl text-center font-medium text-zinc-900'>Recent Projects</h2>
-                <p className='text-zinc-600 md:mt-5 mt-3 text-center max-w-4xl mx-auto'>
-                    We have successfully delivered a wide range of projects across various industries, including e-commerce, healthcare, finance, and more. Our portfolio showcases our expertise in web and mobile app development, digital marketing, and custom software solutions.
-                </p>
-
+                <TextEffectOne wrapperElement="h2"
+                    staggerDuration={0.02} initialDelay={0.1} animateOnce className='md:text-5xl text-3xl text-center font-medium text-zinc-900' text="Recent Projects" />
+                <TextEffectOne wrapperElement="p"
+                    staggerDuration={0.005} initialDelay={0.1} animateOnce className='text-zinc-600 md:mt-5 mt-3 text-center max-w-4xl mx-auto' text="We have successfully delivered a wide range of projects across various industries. Our portfolio showcases our expertise in web and mobile app development, digital marketing, and custom software solutions." />
                 <div className="grid md:mt-12 mt-8 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-5 gap-2">
                     <div className="w-full md:h-[18.5rem] rounded-2xl overflow-hidden">
                         <Image src={"/projects/project1.jpeg"} width={1000} height={1000} className='w-full transition-all duration-500 hover:scale-105 rounded-2xl' alt='project' />
@@ -139,10 +150,10 @@ const Page = () => {
 
                 <div className="flex items-center justify-center mt-12">
                     <Link href={"/project"} className='flex items-center gap-2 text-gray-800 hover:underline'>
-                        View More <FaArrowRightLong />
+                        <TextEffectThree animationDuration={0.3} className='text-gray-800' text="View More" />
+                        <FaArrowRightLong />
                     </Link>
                 </div>
-
             </div>
 
             <div className="md:mt-16 mt-8"></div>
