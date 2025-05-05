@@ -1,5 +1,5 @@
 "use client"
-import { getFirestore, collection, addDoc } from "firebase/firestore"
+import { collection, addDoc, serverTimestamp } from "firebase/firestore"
 import BodyWrapper from "@/app/BodyWrapper"
 import Navbar from "@/Components/Navbar"
 import Image from "next/image"
@@ -9,7 +9,7 @@ import { CgWebsite } from "react-icons/cg"
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { GiWorld } from "react-icons/gi"
 import { IoLogoInstagram } from "react-icons/io"
-import { app } from "@/lib/firebase"
+import { db } from "@/lib/firebase"
 import { toast } from "react-toastify"
 
 const Services = [
@@ -30,8 +30,6 @@ const SocialMedia = [
     { name: "Website", value: "website", icon: <CgWebsite /> },
     { name: "Others", value: "other", icon: <GiWorld /> },
 ];
-
-const firestore = getFirestore(app)
 
 const Page = () => {
 
@@ -72,7 +70,7 @@ const Page = () => {
         }
 
         try {
-            await addDoc(collection(firestore, "clients"), {
+            await addDoc(collection(db, "clients"), {
                 name: data.name,
                 email: data.email,
                 number: data.number,
@@ -80,6 +78,7 @@ const Page = () => {
                 message: data.message,
                 services: Object.keys(services).filter((key) => services[key]),
                 socialMedia: Object.keys(social).filter((key) => social[key]),
+                createdAt: serverTimestamp(),
             });
             toast.success("Your request has been submitted successfully!");
 

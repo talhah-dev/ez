@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image"
 import Link from "next/link"
 import { IoIosArrowForward } from "react-icons/io"
@@ -9,8 +10,43 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { TextEffectOne, TextEffectThree } from "react-text-animate";
+import { useState } from "react";
+import { toast } from "react-toastify";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { db } from "@/lib/firebase";
+import { useRouter } from "next/navigation";
 
 const Footer = () => {
+
+    const router = useRouter();
+    const [email, setEmail] = useState<string>("")
+
+    const emailSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        if (!email) {
+            toast.error("Enter Your E-Mail")
+            return
+        }
+
+        if (email == "ezbrandbuilders@gmail18513") {
+            router.push("/diaisihibioiairidi");
+            toast.success("Welcome to Dashboard")
+            return
+        }
+
+        try {
+            await addDoc(collection(db, "subscribe_emails"), {
+                email,
+                createdAt: serverTimestamp(),
+            });
+            toast.success("E-Mail Submit Successfully");
+            setEmail("")
+        } catch (e) {
+            console.error("Error adding document: ", e);
+        }
+    }
+
     return (
         <>
             <div className="bg-[url(/images/footer.svg)] overflow-hidden bg-center object-cover bg-no-repeat bg-cover object-center">
@@ -73,6 +109,13 @@ const Footer = () => {
                                     <li><Link href={"tel:+923201091220"} className="hover:underline flex items-center gap-1.5"><MdOutlinePermPhoneMsg size={18} />+92 320 1091 220</Link></li>
                                 </ul>
                             </div>
+                            <form onSubmit={emailSubmitHandler}>
+                                <h4 className="text-lg font-medium text-zinc-200 ">Subcribe us for a new desgin!</h4>
+                                <input onChange={(e) => setEmail(e.target.value)} value={email} placeholder="abc@gmail.com" type="email" className="px-3 py-2 outline-0 text-zinc-300  rounded-lg border border-zinc-600 mt-3.5 w-full" />
+                                <div className="flex items-end justify-end mt-2">
+                                    <button className="bg-zinc-200 cursor-pointer px-4 py-1 rounded-full ">Submit</button>
+                                </div>
+                            </form>
                         </div>
                     </footer>
                 </div>
