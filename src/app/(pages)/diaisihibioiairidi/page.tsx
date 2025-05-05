@@ -117,7 +117,7 @@ const Page = () => {
                             className="p-2 text-zinc-700 rounded-lg border outline-0 w-full border-zinc-400 mt-2"
                         />
 
-                        <p className="text-sm gap-y-3 gap-1 flex flex-wrap mt-5 text-zinc-500">I'm coming from:
+                        <p className="text-sm gap-y-3 gap-1 flex flex-wrap mt-5 text-zinc-500">I&apos;m coming from:
                             {client.socialMedia?.map((media: string, index: number) => (
                                 <span key={index} className="text-[16px] font-medium text-zinc-800 bg-zinc-100 md:ml-1 px-3 block rounded-full">
                                     {media}
