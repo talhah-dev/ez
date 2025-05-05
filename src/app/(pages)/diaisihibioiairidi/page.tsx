@@ -7,7 +7,23 @@ import { GoTrash } from "react-icons/go"
 import { toast } from "react-toastify"
 
 const Page = () => {
-    const [clients, setClients] = useState<any[]>([]);
+
+    type Client = {
+        id: string;
+        name: string;
+        email: string;
+        number: string;
+        budget: number;
+        message: string;
+        services?: string[];
+        socialMedia?: string[];
+        createdAt?: {
+            toDate: () => Date;
+        };
+    };
+
+
+    const [clients, setClients] = useState<Client[]>([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -16,7 +32,8 @@ const Page = () => {
             const clientsData = querySnapshot.docs.map(doc => ({
                 id: doc.id,
                 ...doc.data()
-            }));
+            })) as Client[];
+
             setClients(clientsData);
             setLoading(false);
         };
@@ -24,12 +41,13 @@ const Page = () => {
         fetchClients();
     }, []);
 
+
     const handleDelete = async (clientData: { id: string, name: string }) => {
         const confirmDelete = confirm("Are you sure you want to delete this client?");
         if (!confirmDelete) return;
 
         try {
-            let client_Data = clientData.id;
+            const client_Data = clientData.id;
             await deleteDoc(doc(db, "clients", client_Data));
             setClients(prev => prev.filter(client => client.id !== client_Data));
             toast.success(`${clientData.name} deleted successfully!`);
