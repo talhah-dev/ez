@@ -12,7 +12,6 @@ import DevelopmentCard from '@/Components/DevelopmentCard';
 import Clients from '@/Components/Clients';
 import { FaArrowRightLong } from "react-icons/fa6";
 import { TextEffectOne, TextEffectThree } from 'react-text-animate';
-import { motion } from 'framer-motion'
 
 const Page = () => {
 
