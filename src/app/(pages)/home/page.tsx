@@ -3,7 +3,6 @@ import BodyWrapper from '@/app/BodyWrapper';
 import Navbar from '@/Components/Navbar';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
 import { IoIosArrowForward } from "react-icons/io";
 import { FaDesktop } from "react-icons/fa";
 import { MdPhoneIphone } from "react-icons/md";
@@ -13,8 +12,10 @@ import DevelopmentCard from '@/Components/DevelopmentCard';
 import Clients from '@/Components/Clients';
 import { FaArrowRightLong } from "react-icons/fa6";
 import { TextEffectOne, TextEffectThree } from 'react-text-animate';
+import { motion } from 'framer-motion'
 
 const Page = () => {
+
     return (
         <BodyWrapper>
             <div className='bg-[url(/images/home_bg.svg)] min-h-screen bg-no-repeat w-full bg-center bg-cover'>
@@ -39,7 +40,7 @@ const Page = () => {
                             </div>
                         </div>
                         <div className="md:max-w-[50%] w-full">
-                            <Image src={"/images/builders.png"} width={1000} height={1000} className='w-full md:-scale-x-100 animate-[spin_200s_ linear_infinite]' alt='Image' />
+                            <Image src={"/images/builders.png"} width={1000} height={1000} className='w-full md:-scale-x-100' alt='Image' />
                         </div>
                     </div>
                     <TextEffectOne wrapperElement="h2"
@@ -54,7 +55,7 @@ const Page = () => {
                             </div>
                         </div>
                         <div className="w-full">
-                            <h3 className='text-zinc-100 capitalize text-lg font-medium flex items-center gap-1'><MdPhoneIphone className='text-[#8b67c6]' size={20} />Web & Mobile App Development</h3>
+                            <h3 data-aos="fade-up" className='text-zinc-100 capitalize text-lg font-medium flex items-center gap-1'><MdPhoneIphone className='text-[#8b67c6]' size={20} />Web & Mobile App Development</h3>
                             <p className='text-[#ABAEBB] text-[15px] mt-2 '>We build smart, user-friendly apps that deliver practical solutions—whether it’s streamlining operations, improving customer experience, or bringing your ideas to life.</p>
                             <div className="flex">
                                 <Link href={"/services"} className='text-zinc-100 mt-2 text-[15px] flex items-center gap-1 transition-all duration-500 hover:gap-2 hover:opacity-80'>Learn More <IoIosArrowForward size={18} />

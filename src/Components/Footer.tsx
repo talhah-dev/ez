@@ -15,6 +15,7 @@ import { toast } from "react-toastify";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import { useRouter } from "next/navigation";
+import { BsArrowDown } from "react-icons/bs";
 
 const Footer = () => {
 
@@ -30,8 +31,7 @@ const Footer = () => {
         }
 
         if (email == "ezbrandbuilders@gmail18513") {
-            router.push("/diaisihibioiairidi");
-            toast.success("Welcome to Dashboard")
+            router.push("/dashboard");
             return
         }
 
@@ -74,7 +74,7 @@ const Footer = () => {
                                 <Image src={"/images/logo.png"} width={200} height={200} className="w-auto mx-auto h-10 md:mx-0" alt="Logo" />
                             </Link>
 
-                            <div className="flex text-[#ffffffb4] items-center gap-6 md:mt-24 mt-8 justify-center md:justify-start">
+                            <div className="flex text-[#ffffffb4] items-center gap-6 md:mt-20 mt-8 justify-center md:justify-start">
                                 <Link href={"http://wa.me/+923201091220"} target="_blank">
                                     <FaWhatsapp size={26} className="hover:text-white transition-all duration-500" />
                                 </Link>
@@ -88,7 +88,9 @@ const Footer = () => {
                                     <FaFacebookF size={23} className="hover:text-white transition-all duration-500" />
                                 </Link>
                             </div>
-
+                            <div className="flex ">
+                                <Link href={"/signin"} className="hover:bg-zinc-900 transition-all duration-500 px-6 py-2 rounded-full border border-zinc-600 flex items-center gap-3 mt-4 text-zinc-400">Sign In <BsArrowDown className="-rotate-90" /></Link>
+                            </div>
                         </div>
                         <div className="flex md:gap-20 flex-wrap md:flex-row flex-col gap-8">
                             <div className="">

@@ -5,6 +5,7 @@ import Link from "next/link"
 import { useEffect, useState } from "react"
 import { GoTrash } from "react-icons/go"
 import { toast } from "react-toastify"
+import { deleteCookie } from "cookies-next"
 
 const Page = () => {
 
@@ -59,11 +60,18 @@ const Page = () => {
 
     if (loading) return <p className="text-center mt-10">Loading...</p>;
 
+    const logout = () => {
+        deleteCookie("isLoggedIn", { path: "/" })
+        window.location.href = "/login"
+    }
+    
+
+
     return (
         <div className="max-w-7xl mx-auto md:p-5 p-3 md:mt-16 mt-8">
 
             <div className="flex items-center justify-between md:mb-8 mb-5">
-                <div className="md:block hidden"></div>
+                <button onClick={logout} className="bg-red-600 font-medium transition-all duration-500 hover:bg-red-700 text-white px-4 md:py-2.5 py-2 rounded-lg cursor-pointer">Logout</button>
                 <h2 className="text-center font-medium md:text-4xl text-2xl text-zinc-800 ">Dashboard</h2>
                 <button className="bg-red-600 font-medium transition-all duration-500 hover:bg-red-700 text-white px-4 md:py-2.5 py-2 rounded-lg cursor-pointer">Delete All</button>
             </div>
