@@ -7,18 +7,20 @@ import Link from "next/link"
 const Page = () => {
     return (
         <BodyWrapper>
-            <div className='bg-[url(/images/serviceBackground.svg)] bg-no-repeat w-full bg-center bg-cover'>
-                <Navbar />
-                <div className="overflow-hidden mt-10 md:mt-0 px-4  max-w-7xl mx-auto w-full  md:py-20 py-10">
-                    <div className="flex max-w-4xl mx-auto w-full items-center justify-center text-center">
-                        <div className="">
-                            <h1 className='md:text-5xl text-4xl leading-tight font-medium text-white'>About EZ Brand Builders
-                            </h1>
-                            <p className='text-[#ABAEBB] md:mt-5 mt-3 md:text-lg'>EZ Brand Builders Private Limited was established in 2017 with fewer employees. With the span of time, we become the leading software development company in UAE, ready to serve the businesses and companies across the world.</p>
+            <div className="bg-[#040406]">
+                <div className='bg-[url(/images/serviceBackground.svg)] bg-no-repeat w-full bg-center bg-cover'>
+                    <Navbar />
+                    <div className="overflow-hidden mt-10 md:mt-0 px-4  max-w-7xl mx-auto w-full  md:py-20 py-10">
+                        <div className="flex max-w-4xl mx-auto w-full items-center justify-center text-center">
+                            <div className="">
+                                <h1 className='md:text-5xl text-4xl leading-tight font-medium text-white'>About EZ Brand Builders
+                                </h1>
+                                <p className='text-[#ABAEBB] md:mt-5 mt-3 md:text-lg'>EZ Brand Builders Private Limited was established in 2017 with fewer employees. With the span of time, we become the leading software development company in UAE, ready to serve the businesses and companies across the world.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className="md:mt-16 mt-10 text-[#a2a4ac]">
-                        <Counter />
+                        <div className="md:mt-16 mt-10 text-[#a2a4ac]">
+                            <Counter />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -28,7 +30,7 @@ const Page = () => {
                     <h2 className="md:text-4xl text-2xl font-medium text-zinc-900">Your Partner in Digital Excellence</h2>
                     <p className="text-zinc-600 md:mt-5 mt-3">Whether creating user-friendly websites, intuitive mobile applications, or maximizing your online presence with cutting-edge SEO techniques, we produce outcomes that promote operational effectiveness and business growth. With EZ Brand Builders on your side, you can successfully negotiate the complexities of the digital environment and keep your competitive edge in the market today.
                     </p>
-                   
+
                 </div>
                 <div className="md:max-w-[40%] w-full">
                     <Image src={"/about/DigitalExcellence.png"} width={1000} height={1000} className='w-full md:rounded-xl' alt='EZ Brand Builders digital marketing visual' />

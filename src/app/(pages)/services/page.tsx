@@ -9,18 +9,20 @@ import Image from "next/image"
 const Page = () => {
     return (
         <BodyWrapper>
-            <div className='bg-[url(/images/serviceBackground.svg)] bg-no-repeat w-full bg-center bg-cover'>
-                <Navbar />
-                <div className="overflow-hidden mt-10 md:mt-0  max-w-7xl mx-auto w-full  md:py-20 py-10 px-4">
-                    <div className="flex max-w-4xl mx-auto w-full items-center justify-center text-center">
-                        <div className="">
-                            <h1 className='md:text-5xl text-4xl leading-tight font-medium text-white'>Our Professional Services
-                            </h1>
-                            <p className='text-[#ABAEBB] md:mt-5 mt-3 md:text-lg'>We can assist you to grow your company to new heights with our tailored solutions. We combine extensive knowledge of the business with committed excellence to provide services</p>
+            <div className="bg-[#040406]">
+                <div className='bg-[url(/images/serviceBackground.svg)] bg-no-repeat w-full bg-center bg-cover'>
+                    <Navbar />
+                    <div className="overflow-hidden mt-10 md:mt-0  max-w-7xl mx-auto w-full  md:py-20 py-10 px-4">
+                        <div className="flex max-w-4xl mx-auto w-full items-center justify-center text-center">
+                            <div className="">
+                                <h1 className='md:text-5xl text-4xl leading-tight font-medium text-white'>Our Professional Services
+                                </h1>
+                                <p className='text-[#ABAEBB] md:mt-5 mt-3 md:text-lg'>We can assist you to grow your company to new heights with our tailored solutions. We combine extensive knowledge of the business with committed excellence to provide services</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className="md:mt-16 mt-10 text-[#a2a4ac]">
-                        <Counter />
+                        <div className="md:mt-16 mt-10 text-[#a2a4ac]">
+                            <Counter />
+                        </div>
                     </div>
                 </div>
             </div>

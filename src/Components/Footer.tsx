@@ -96,11 +96,21 @@ const Footer = () => {
                             <div className="">
                                 <h4 className="text-lg font-medium text-zinc-200">Quick Links</h4>
                                 <ul className="mt-3.5 text-zinc-400 space-y-2.5">
-                                    <li><Link href={"/"} className="hover:underline">Home</Link></li>
-                                    <li><Link href={"/about"} className="hover:underline">About Us</Link></li>
-                                    <li><Link href={"/services"} className="hover:underline">Services</Link></li>
-                                    <li><Link href={"/project"} className="hover:underline">Projects</Link></li>
-                                    <li><Link href={"/contact"} className="hover:underline">Contact Us</Link></li>
+                                    <li><Link href={"/"} className="hover:underline">
+                                        <TextEffectThree animationDuration={0.3} text="Home" />
+                                    </Link></li>
+                                    <li><Link href={"/about"} className="hover:underline">
+                                        <TextEffectThree animationDuration={0.3} text="About Us" />
+                                    </Link></li>
+                                    <li><Link href={"/services"} className="hover:underline">
+                                        <TextEffectThree animationDuration={0.3} text="Services" />
+                                    </Link></li>
+                                    <li><Link href={"/project"} className="hover:underline">
+                                        <TextEffectThree animationDuration={0.3} text="Projects" />
+                                    </Link></li>
+                                    <li><Link href={"/contact"} className="hover:underline">
+                                        <TextEffectThree animationDuration={0.3} text="Contact Us" />
+                                    </Link></li>
                                 </ul>
                             </div>
                             <div className="">
