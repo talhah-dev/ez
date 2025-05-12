@@ -11,6 +11,7 @@ import { GiWorld } from "react-icons/gi"
 import { IoLogoInstagram } from "react-icons/io"
 import { db } from "@/lib/firebase"
 import { toast } from "react-toastify"
+import emailjs from 'emailjs-com';
 
 const Services = [
     { name: "Website Development", value: "websiteDevelopment" },
@@ -32,6 +33,8 @@ const SocialMedia = [
 ];
 
 const Page = () => {
+
+    const [loading, setLoading] = useState(false);
 
     const [data, setData] = useState({
         name: "",
@@ -64,11 +67,16 @@ const Page = () => {
     const formhandler = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
 
-        if (!data.name || !data.email || !data.number || !data.message || data.budgetOption === "custom" ? !data.customBudget : !data.budgetOption || Object.keys(services).filter((key) => services[key]).length === 0 || Object.keys(social).filter((key) => social[key]).length === 0) {
-            toast.error("Please fill all the  fields");
+        const isBudgetInvalid = data.budgetOption === "custom" ? !data.customBudget : !data.budgetOption;
+        const hasSelectedServices = Object.values(services).some(Boolean);
+        const hasSelectedSocial = Object.values(social).some(Boolean);
+
+        if (!data.name || !data.email || !data.number || !data.message || isBudgetInvalid || !hasSelectedServices || !hasSelectedSocial) {
+            toast.error("Please fill all the fields");
             return;
         }
 
+        setLoading(true);
         try {
             await addDoc(collection(db, "clients"), {
                 name: data.name,
@@ -80,6 +88,22 @@ const Page = () => {
                 socialMedia: Object.keys(social).filter((key) => social[key]),
                 createdAt: serverTimestamp(),
             });
+
+            emailjs.send(
+                'service_d4sxwhi',
+                'template_sn1hnkj',
+                {
+                    name: data.name,
+                    email: data.email,
+                    number: data.number,
+                    budget: data.budgetOption === "custom" ? data.customBudget : data.budgetOption,
+                    message: data.message,
+                    services: Object.keys(services).filter((key) => services[key]).join(', '),
+                    social: Object.keys(social).filter((key) => social[key]).join(', ')
+                },
+                '36-k7q5FmxP0IOgdy'
+            );
+
             toast.success("Your request has been submitted successfully!");
 
             setData({
@@ -110,6 +134,8 @@ const Page = () => {
 
         } catch (e) {
             console.error("Error adding document: ", e);
+        } finally {
+            setLoading(false);
         }
     }
 
@@ -212,7 +238,13 @@ const Page = () => {
                                         }
                                     </div>
                                 </div>
-                                <button className="px-8 py-2.5 text-zinc-200 bt cursor-pointer w-full md:w-auto transition-all duration-500 hover:opacity-80 rounded-full border border-[#f1a274] md:col-span-2">Submit the Request</button>
+                                <button disabled={loading} className="px-8 py-2.5 text-zinc-200 bt cursor-pointer w-full md:w-auto transition-all flex items-center justify-center duration-500 hover:opacity-80 rounded-full border border-[#f1a274] md:col-span-2">{loading ? (<div className="flex items-center gap-2">
+                                    <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+                                    </svg>
+                                    Submitting...
+                                </div>) : 'Submit the Request'}</button>
                             </form>
                         </div>
                     </div>
