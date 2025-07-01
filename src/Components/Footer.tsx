@@ -95,7 +95,7 @@ const Footer = () => {
                         <div className="flex md:gap-20 flex-wrap md:flex-row flex-col gap-8">
                             <div className="">
                                 <h4 className="text-lg font-medium text-zinc-200">Quick Links</h4>
-                                <ul className="mt-3.5 text-zinc-400 space-y-2.5">
+                                <ul className="mt-3.5 text-zinc-400 space-y-4">
                                     <li><Link href={"/"} className="hover:underline">
                                         <TextEffectThree animationDuration={0.3} text="Home" />
                                     </Link></li>
@@ -115,7 +115,7 @@ const Footer = () => {
                             </div>
                             <div className="">
                                 <h4 className="text-lg font-medium text-zinc-200">Get In Touch</h4>
-                                <ul className="mt-3.5 text-zinc-400 space-y-2.5">
+                                <ul className="mt-3.5 text-zinc-400 space-y-3">
                                     <li className=" flex items-center gap-2"><PiBuildings size={18} />Pakistan, Karachi</li>
                                     <li><Link href={"mailto:ezbrandbuilders@gmail.com"} className="hover:underline flex items-center gap-2"><IoMailOutline size={18} />ezbrandbuilders@gmail.com</Link></li>
                                     <li><Link href={"tel:+923201091220"} className="hover:underline flex items-center gap-1.5"><MdOutlinePermPhoneMsg size={18} />+92 320 1091 220</Link></li>

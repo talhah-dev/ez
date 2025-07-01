@@ -20,27 +20,27 @@ const Page = () => {
             <div className='bg-[url(/images/home_bg.svg)] min-h-screen bg-no-repeat w-full bg-center bg-cover'>
                 <Navbar />
                 <div className="overflow-hidden mt-10 md:mt-0  max-w-7xl mx-auto w-full">
-                    <div className="flex items-center md:flex-row flex-col min-h-[calc(100vh-6rem)] justify-between md:gap-16 gap-5">
-                        <div className="md:max-w-[50%] w-full px-5">
+                    <div className="flex items-center md:flex-row flex-col min-h-[calc(100vh-6rem)] justify-center md:gap-16 gap-5">
+                        <div className="w-full px-5 text-center" >
                             <TextEffectOne wrapperElement="h1"
-                                staggerDuration={0.01} animateOnce className='md:text-7xl text-4xl leading-tight font-medium text-white' text="Building Brands" />
+                                staggerDuration={0.01} animateOnce className='md:text-8xl text-4xl leading-tight font-semibold text-white' text="Building Brands" />
                             <TextEffectOne wrapperElement="h1"
-                                staggerDuration={0.01} animateOnce className='md:text-7xl text-4xl leading-tight font-medium text-white' text="and Solve Tech" />
+                                staggerDuration={0.01} animateOnce className='md:text-8xl text-4xl leading-tight font-semibold text-white' text="and Solve Tech" />
                             <TextEffectOne wrapperElement="h1"
-                                staggerDuration={0.01} animateOnce className='md:text-7xl text-4xl leading-tight font-medium text-white' text="Challenges" />
+                                staggerDuration={0.01} animateOnce className='md:text-8xl text-4xl leading-tight font-semibold text-white' text="Challenges" />
                             <TextEffectOne wrapperElement="p"
-                                staggerDuration={0.005} initialDelay={0.01} animateOnce className='text-[#ABAEBB] md:mt-5 mt-3 md:text-lg' text="We have become the top-notch software development services provider primarily due to our ." />
-                            <div className="flex items-center gap-7 md:flex-row flex-col mt-6">
-                                <Link href={"/contact"} className="px-8 text-center py-2.5 text-zinc-200 bt cursor-pointer w-full md:w-auto transition-all duration-500 hover:opacity-80 rounded-full border border-[#f1a274] ">Get Started</Link>
+                                staggerDuration={0.005} initialDelay={0.01} animateOnce className='text-[#ABAEBB] max-w-2xl !leading-tight mx-auto md:mt-5 mt-3 md:text-lg' text="We have become the top-notch software development services provider primarily due to our." />
+                            <div className="flex items-center gap-7 justify-center md:flex-row flex-col mt-6">
+                                <Link href={"/contact"} className="px-10 text-center py-3.5 text-zinc-200 bt cursor-pointer w-full md:w-auto transition-all duration-500 hover:opacity-80 rounded-full border border-[#f1a274] ">Get Started</Link>
                                 <Link href={"/services"} className='text-zinc-200 flex items-center gap-1 transition-all duration-500 hover:gap-2 hover:opacity-80'>
                                     <TextEffectThree animationDuration={0.2} className='text-zinc-200' text="Explore Our Services" />
                                     <IoIosArrowForward size={18} />
                                 </Link>
                             </div>
                         </div>
-                        <div className="md:max-w-[50%] w-full">
+                        {/* <div className="md:max-w-[50%] w-full">
                             <Image src={"/images/builders.png"} width={1000} height={1000} className='w-full md:-scale-x-100' alt='Image' />
-                        </div>
+                        </div> */}
                     </div>
                     <TextEffectOne wrapperElement="h2"
                         staggerDuration={0.02} animateOnce className='md:text-4xl text-3xl mt-10 leading-tight font-medium text-white capitalize px-5' text="Our Top Services" />
