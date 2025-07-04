@@ -1,5 +1,4 @@
 "use client"
-import { collection, addDoc, serverTimestamp } from "firebase/firestore"
 import BodyWrapper from "@/app/BodyWrapper"
 import Navbar from "@/Components/Navbar"
 import Image from "next/image"
@@ -9,9 +8,10 @@ import { CgWebsite } from "react-icons/cg"
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { GiWorld } from "react-icons/gi"
 import { IoLogoInstagram } from "react-icons/io"
-import { db } from "@/lib/firebase"
 import { toast } from "react-toastify"
-import emailjs from 'emailjs-com';
+import axios from 'axios';
+import { ContactFormData } from "../../../../types/contact"
+// import emailjs from 'emailjs-com';
 
 const Services = [
     { name: "Website Development", value: "websiteDevelopment" },
@@ -36,108 +36,72 @@ const Page = () => {
 
     const [loading, setLoading] = useState(false);
 
-    const [data, setData] = useState({
-        name: "",
-        email: "",
-        number: "",
-        budgetOption: "",
-        customBudget: "",
-        message: "",
-    })
-
-    const [services, setServices] = useState<Record<string, boolean>>({
-        websiteDevelopment: false,
-        mobileApplication: false,
-        digitalMarketing: false,
-        branding: false,
-        graphicDesign: false,
-        contentWriting: false,
-        socialMediaMarketing: false,
-        seo: false,
-    })
-
-    const [social, setSocial] = useState<Record<string, boolean>>({
-        facebook: false,
-        linkedin: false,
-        instagram: false,
-        website: false,
-        other: false
+    const [data, setData] = useState<ContactFormData>({
+        name: '',
+        email: '',
+        number: '',
+        message: '',
+        budget: '',
+        services: [],
+        socialMedia: []
     })
 
     const formhandler = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault()
+        e.preventDefault();
+        setLoading(true);
 
-        const isBudgetInvalid = data.budgetOption === "custom" ? !data.customBudget : !data.budgetOption;
-        const hasSelectedServices = Object.values(services).some(Boolean);
-        const hasSelectedSocial = Object.values(social).some(Boolean);
-
-        if (!data.name || !data.email || !data.number || !data.message || isBudgetInvalid || !hasSelectedServices || !hasSelectedSocial) {
-            toast.error("Please fill all the fields");
+        // Basic validation
+        if (
+            !data.name.trim() ||
+            !data.email.trim() ||
+            !data.number.trim() ||
+            !data.message.trim() ||
+            !data.budget.trim() ||
+            data.services.length === 0 ||
+            data.socialMedia.length === 0
+        ) {
+            toast.error("Please fill all the required fields and select options.");
+            setLoading(false);
             return;
         }
 
-        setLoading(true);
         try {
-            await addDoc(collection(db, "clients"), {
+            const payload: ContactFormData = {
                 name: data.name,
                 email: data.email,
                 number: data.number,
-                budget: data.budgetOption === "custom" ? data.customBudget : data.budgetOption,
                 message: data.message,
-                services: Object.keys(services).filter((key) => services[key]),
-                socialMedia: Object.keys(social).filter((key) => social[key]),
-                createdAt: serverTimestamp(),
-            });
+                budget: data.budget,
+                services: data.services,
+                socialMedia: data.socialMedia,
+            };
 
-            emailjs.send(
-                'service_d4sxwhi',
-                'template_sn1hnkj',
-                {
-                    name: data.name,
-                    email: data.email,
-                    number: data.number,
-                    budget: data.budgetOption === "custom" ? data.customBudget : data.budgetOption,
-                    message: data.message,
-                    services: Object.keys(services).filter((key) => services[key]).join(', '),
-                    social: Object.keys(social).filter((key) => social[key]).join(', ')
-                },
-                '36-k7q5FmxP0IOgdy'
-            );
+            const response = await axios.post('/api/contact', payload);
 
-            toast.success("Your request has been submitted successfully!");
+            if (response.status === 200) {
+                toast.success("Your request has been submitted successfully!");
 
-            setData({
-                name: "",
-                email: "",
-                number: "",
-                budgetOption: "",
-                customBudget: "",
-                message: "",
-            })
-            setServices({
-                websiteDevelopment: false,
-                mobileApplication: false,
-                digitalMarketing: false,
-                branding: false,
-                graphicDesign: false,
-                contentWriting: false,
-                socialMediaMarketing: false,
-                seo: false,
-            })
-            setSocial({
-                facebook: false,
-                linkedin: false,
-                instagram: false,
-                website: false,
-                other: false
-            })
-
-        } catch (e) {
-            console.error("Error adding document: ", e);
+                setData({
+                    name: "",
+                    email: "",
+                    number: "",
+                    budget: "",
+                    message: "",
+                    services: [],
+                    socialMedia: []
+                });
+            } else {
+                toast.error("Something went wrong. Please try again.");
+            }
+        } catch (error) {
+            console.error("Submission failed:", error);
+            toast.error("Failed to submit the form. Please try again later.");
         } finally {
             setLoading(false);
         }
-    }
+    };
+
+
 
     return (
         <BodyWrapper>
@@ -193,8 +157,8 @@ const Page = () => {
                                 </div>
                                 <div className="">
                                     <p className="text-13 mt-1 text-zinc-300 text-sm font-medium leading-none tracking-tight text-gray-94 block">Project budget (USD)</p>
-                                    <select onChange={(e) => setData(prev => ({ ...prev, budgetOption: e.target.value }))}
-                                        value={data.budgetOption}
+                                    <select onChange={(e) => setData(prev => ({ ...prev, budget: e.target.value }))}
+                                        value={data.budget}
                                         id="countries" className="mt-2.5 bg-[#04040659] border border-[#41434D] text-sm rounded text-zinc-300 block w-full p-2.5">
                                         <option className="bg-black py-1 block" value="">Select</option>
                                         <option className="bg-black py-1 block" value="50">$50</option>
@@ -204,21 +168,23 @@ const Page = () => {
                                         <option className="bg-black py-1 block" value="600-700">$600 - $700</option>
                                         <option className="bg-black py-1 block" value="custom">Custom</option>
                                     </select>
-                                    {data.budgetOption === "custom" && (
-                                        <input
-                                            type="text"
-                                            placeholder="Enter your budget"
-                                            className="mt-2 w-full bg-[#04040659] border border-[#41434D] text-white p-2.5 rounded"
-                                            onChange={(e) => setData(prev => ({ ...prev, customBudget: e.target.value }))}
-                                        />
-                                    )}
+
                                 </div>
                                 <div className="md:col-span-2">
                                     <label htmlFor="" className="text-13 text-zinc-300 text-sm font-medium leading-none tracking-tight text-gray-94">I’m interested in...</label>
                                     <div className="flex items-center mt-2 gap-4 flex-wrap">
                                         {
                                             Services.map((name, index) => (
-                                                <p key={index} onClick={() => setServices({ ...services, [name.value]: !services[name.value] })} className={` ${services[name.value] ? "border-white bg-white/20" : "border-white/20 bg-white/5"} text-zinc-200 md:px-5 px-4 md:py-3 py-2 rounded-xl cursor-pointer hover:opacity-70 active:translate-y-0.5 transition-all duration-500 border `}>{name.name}</p>
+                                                <p key={index} onClick={() => {
+                                                    const isSelected = data.services.includes(name.value);
+                                                    setData(prev => ({
+                                                        ...prev,
+                                                        services: isSelected
+                                                            ? prev.services.filter(service => service !== name.value)
+                                                            : [...prev.services, name.value]
+                                                    }));
+                                                }}
+                                                    className={` ${data.services.includes(name.value) ? "border-white bg-white/20" : "border-white/20 bg-white/5"} text-zinc-200 md:px-5 px-4 md:py-3 py-2 rounded-xl cursor-pointer hover:opacity-70 active:translate-y-0.5 transition-all duration-500 border `}>{name.name}</p>
                                             ))
                                         }
                                     </div>
@@ -232,7 +198,16 @@ const Page = () => {
                                     <div className="flex items-center mt-2 gap-2 flex-wrap">
                                         {
                                             SocialMedia.map((name, index) => (
-                                                <p key={index} onClick={() => setSocial({ ...social, [name.value]: !social[name.value] })} className={` ${social[name.value] ? "border-white bg-white/20" : "border-white/20 bg-white/5"} text-zinc-200 text-sm px-3 py-1 flex gap-1.5 rounded-full cursor-pointer hover:opacity-70 items-center active:translate-y-0.5 transition-all duration-500 border `}>{name.icon}
+                                                <p key={index} onClick={() => {
+                                                    const isSelected = data.socialMedia.includes(name.value);
+                                                    setData(prev => ({
+                                                        ...prev,
+                                                        socialMedia: isSelected
+                                                            ? prev.socialMedia.filter(item => item !== name.value)
+                                                            : [...prev.socialMedia, name.value]
+                                                    }));
+                                                }}
+                                                    className={` ${data.socialMedia.includes(name.value) ? "border-white bg-white/20" : "border-white/20 bg-white/5"} text-zinc-200 text-sm px-3 py-1 flex gap-1.5 rounded-full cursor-pointer hover:opacity-70 items-center active:translate-y-0.5 transition-all duration-500 border `}>{name.icon}
                                                     {name.name}</p>
                                             ))
                                         }
@@ -257,3 +232,27 @@ const Page = () => {
 }
 
 export default Page
+
+//  emailjs.send(
+//             'service_d4sxwhi',
+//             'template_sn1hnkj',
+//             {
+//                 name: data.name,
+//                 email: data.email,
+//                 number: data.number,
+//                 budget: data.budgetOption === "custom" ? data.customBudget : data.budgetOption,
+//                 message: data.message,
+//                 services: Object.keys(services).filter((key) => services[key]).join(', '),
+//                 social: Object.keys(social).filter((key) => social[key]).join(', ')
+//             },
+//             '36-k7q5FmxP0IOgdy'
+//         );
+
+{/* {data.budgetOption === "custom" && (
+                                        <input
+                                            type="text"
+                                            placeholder="Enter your budget"
+                                            className="mt-2 w-full bg-[#04040659] border border-[#41434D] text-white p-2.5 rounded"
+                                            onChange={(e) => setData(prev => ({ ...prev, customBudget: e.target.value }))}
+                                        />
+                                    )} */}
