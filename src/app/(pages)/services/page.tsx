@@ -1,5 +1,4 @@
 import BodyWrapper from "@/app/BodyWrapper"
-import Clients from "@/Components/Clients"
 import Counter from "@/Components/Counter"
 import Navbar from "@/Components/Navbar"
 import ServicesCard from "@/Components/ServicesCard"
