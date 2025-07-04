@@ -6,7 +6,131 @@ import ServicesCard from "@/Components/ServicesCard"
 import SERVICES from "../../../Data/Services"
 import Image from "next/image"
 
+const servicesData = [
+    {
+        backgroundImage: "/images/stack1.svg",
+        image: "/stack/nextdotjs.svg",
+        title: "Next Js",
+        filter: "frontend",
+    },
+    {
+        backgroundImage: "/images/stack1.svg",
+        image: "/stack/react.svg",
+        title: "React Js",
+        filter: "frontend",
+    },
+    {
+        backgroundImage: "/images/stack2.svg",
+        image: "/stack/nodedotjs.svg",
+        title: "Node Js",
+        filter: "frontend",
+    },
+    {
+        backgroundImage: "/images/stack3.svg",
+        image: "/stack/typescript.svg",
+        title: "TypeScript",
+        filter: "frontend",
+    },
+    {
+        backgroundImage: "/images/stack1.svg",
+        image: "/stack/express.svg",
+        title: "Express Js",
+        filter: "frontend",
+    },
+    {
+        backgroundImage: "/images/stack1.svg",
+        image: "/stack/docker.svg",
+        title: "Docker",
+        filter: "frontend",
+    },
+    {
+        backgroundImage: "/images/stack2.svg",
+        image: "/stack/firebase.svg",
+        title: "Firebase",
+        filter: "frontend",
+    },
+    {
+        backgroundImage: "/images/stack3.svg",
+        image: "/stack/javascript.svg",
+        title: "JavaScript",
+        filter: "frontend",
+    },
+    {
+        backgroundImage: "/images/stack1.svg",
+        image: "/stack/mongodb.svg",
+        title: "MongoDB",
+        filter: "frontend",
+    },
+    {
+        backgroundImage: "/images/stack1.svg",
+        image: "/stack/bootstrap.svg",
+        title: "Bootstrap",
+        filter: "frontend",
+    },
+    {
+        backgroundImage: "/images/stack2.svg",
+        image: "/stack/c.svg",
+        title: "C",
+        filter: "frontend",
+    },
+    {
+        backgroundImage: "/images/stack3.svg",
+        image: "/stack/clerk.svg",
+        title: "Clerk",
+        filter: "frontend",
+    },
+    {
+        backgroundImage: "/images/stack1.svg",
+        image: "/stack/cloudinary.svg",
+        title: "Cloudinary",
+        filter: "frontend",
+    },
+    {
+        backgroundImage: "/images/stack1.svg",
+        image: "/stack/cplusplus.svg",
+        title: "C++",
+        filter: "frontend",
+    },
+    {
+        backgroundImage: "/images/stack2.svg",
+        image: "/stack/css.svg",
+        title: "CSS",
+        filter: "frontend",
+    },
+    {
+        backgroundImage: "/images/stack3.svg",
+        image: "/stack/html5.png",
+        title: "HTML",
+        filter: "frontend",
+    },
+    {
+        backgroundImage: "/images/stack1.svg",
+        image: "/stack/python.svg",
+        title: "Python",
+        filter: "frontend",
+    },
+    {
+        backgroundImage: "/images/stack1.svg",
+        image: "/stack/tailwindcss.svg",
+        title: "Tailwind CSS",
+        filter: "frontend",
+    },
+    {
+        backgroundImage: "/images/stack2.svg",
+        image: "/stack/threedotjs.svg",
+        title: "Three Js",
+        filter: "frontend",
+    },
+    {
+        backgroundImage: "/images/stack3.svg",
+        image: "/stack/zod.svg",
+        title: "Zod",
+        filter: "frontend",
+    },
+]
+
 const Page = () => {
+
     return (
         <BodyWrapper>
             <div className="bg-[#040406]">
@@ -35,80 +159,25 @@ const Page = () => {
                 }
             </div>
 
-            <div className="md:mt-20 mt-8 w-full mx-auto md:p-5 p-3 bg-[#18181a79]">
-                <Clients />
-            </div>
-
-            <div className="md:mt-20 mt-8 max-w-7xl w-full mx-auto p-5">
+            <div className="md:mt-28 mt-8 max-w-7xl w-full mx-auto p-5">
                 <h2 className='md:text-5xl text-3xl text-center font-medium text-zinc-900'>Our Tech Stack</h2>
                 <p className='text-zinc-600 md:mt-5 mt-3 text-center max-w-4xl mx-auto'>
                     Our tech stack includes the latest and most popular tools and frameworks, allowing us to deliver high-quality solutions that meet the needs of our clients
                 </p>
-                <div className="md:mt-16 mt-8 grid md:grid-cols-4 grid-cols-2 gap-2 max-w-7xl w-full mx-auto">
-                    <div className="relative flex items-center justify-center">
-                        <Image src={"/images/stack1.svg"} width={500} className="w-full rounded-2xl" height={500} alt="stack" />
-                        <Image src={"/stack/react.png"} width={500} className="w-full max-w-1/2 absolute" height={500} alt="stack" />
+                <div className="md:mt-16 mt-8 grid md:grid-cols-4 lg:grid-cols-6 grid-cols-2 gap-1 max-w-7xl w-full mx-auto">
 
-                        <div className="absolute md:bottom-5 bottom-1 md:left-6 left-2 md:font-medium text-white">
-                            React Js
-                        </div>
-                    </div>
-                    <div className="relative flex items-center justify-center">
-                        <Image src={"/images/stack1.svg"} width={500} className="w-full rounded-2xl" height={500} alt="stack" />
-                        <Image src={"/stack/nextjs.png"} width={500} className="w-full max-w-1/2 absolute" height={500} alt="stack" />
+                    {
+                        servicesData.map((item, index) => (
+                            <div key={index} className="relative flex items-center justify-center">
+                                <Image src={item.backgroundImage} width={500} className="w-full rounded-2xl" height={500} alt="stack" />
+                                <Image src={item.image} width={500} className="w-full invert max-w-[45%] absolute" height={500} alt="stack" />
 
-                        <div className="absolute md:bottom-5 bottom-1 md:left-6 left-2 md:font-medium text-white">
-                            Next Js
-                        </div>
-                    </div>
-                    <div className="relative flex items-center justify-center">
-                        <Image src={"/images/stack2.svg"} width={500} className="w-full rounded-2xl" height={500} alt="stack" />
-                        <Image src={"/stack/typescript.png"} width={500} className="w-full max-w-1/2 absolute" height={500} alt="stack" />
-
-                        <div className="absolute md:bottom-5 bottom-1 md:left-6 left-2 md:font-medium text-white">
-                            TypeScript
-                        </div>
-                    </div>
-                    <div className="relative flex items-center justify-center">
-                        <Image src={"/images/stack3.svg"} width={500} className="w-full rounded-2xl" height={500} alt="stack" />
-                        <Image src={"/stack/node.png"} width={500} className="w-full max-w-1/2 absolute" height={500} alt="stack" />
-
-                        <div className="absolute md:bottom-5 bottom-1 md:left-6 left-2 md:font-medium text-white">
-                            Node Js
-                        </div>
-                    </div>
-                    <div className="relative flex items-center justify-center">
-                        <Image src={"/images/stack2.svg"} width={500} className="w-full rounded-2xl" height={500} alt="stack" />
-                        <Image src={"/stack/mongoose.png"} width={500} className="w-full max-w-1/2 absolute" height={500} alt="stack" />
-
-                        <div className="absolute md:bottom-5 bottom-1 md:left-6 left-2 md:font-medium text-white">
-                            Mongo DB
-                        </div>
-                    </div>
-                    <div className="relative flex items-center justify-center">
-                        <Image src={"/images/stack3.svg"} width={500} className="w-full rounded-2xl" height={500} alt="stack" />
-                        <Image src={"/stack/javascript.png"} width={500} className="w-full max-w-1/2 absolute" height={500} alt="stack" />
-
-                        <div className="absolute md:bottom-5 bottom-1 md:left-6 left-2 md:font-medium text-white">
-                            Javascript
-                        </div>
-                    </div>
-                    <div className="relative flex items-center justify-center">
-                        <Image src={"/images/stack1.svg"} width={500} className="w-full rounded-2xl" height={500} alt="stack" />
-                        <Image src={"/stack/firebase.webp"} width={500} className="w-full max-w-1/2 absolute" height={500} alt="stack" />
-
-                        <div className="absolute md:bottom-5 bottom-1 md:left-6 left-2 md:font-medium text-white">
-                            Firebase
-                        </div>
-                    </div>
-                    <div className="relative flex items-center justify-center">
-                        <Image src={"/images/stack1.svg"} width={500} className="w-full rounded-2xl" height={500} alt="stack" />
-                        <Image src={"/stack/tailwind_css.png"} width={500} className="w-full max-w-1/2 absolute" height={500} alt="stack" />
-
-                        <div className="absolute md:bottom-5 bottom-1 md:left-6 left-2 md:font-medium text-white">
-                            Tailwind CSS
-                        </div>
-                    </div>
+                                <div className="absolute md:bottom-3 bottom-1 md:left-5 left-2 md:font-medium text-white">
+                                    {item.title}
+                                </div>
+                            </div>
+                        ))
+                    }
                 </div>
             </div>
 

@@ -159,7 +159,7 @@ const Page = () => {
                                 <Link href={"http://wa.me/+923201091220"} className="border rounded-full p-3 border-zinc-500 transition-all duration-500 hover:opacity-70 cursor-pointer hover:-translate-y-1">
                                     <Image src={"/images/whatsapp.svg"} width={30} height={30} className="w-6 h-6" alt="whatsapp" />
                                 </Link>
-                                <Link href={"https://www.linkedin.com/company/ez-brand-builders"} className="border rounded-full p-3 border-zinc-500 transition-all duration-500 hover:opacity-70 cursor-pointer hover:-translate-y-1">
+                                <Link href={"https://www.instagram.com/ez.brandbuilders/"} className="border rounded-full p-3 border-zinc-500 transition-all duration-500 hover:opacity-70 cursor-pointer hover:-translate-y-1">
                                     <Image src={"/images/instagram.svg"} width={30} height={30} className="w-6 h-6" alt="whatsapp" />
                                 </Link>
                             </div>

@@ -23,11 +23,11 @@ const Page = () => {
                     <div className="flex items-center md:flex-row flex-col min-h-[calc(100vh-6rem)] justify-center md:gap-16 gap-5">
                         <div className="w-full px-5 text-center" >
                             <TextEffectOne wrapperElement="h1"
-                                staggerDuration={0.01} animateOnce className='md:text-8xl text-4xl leading-tight font-semibold text-white' text="Building Brands" />
+                                staggerDuration={0.01} animateOnce className='md:text-7xl 2xl:text-8xl text-4xl leading-tight font-semibold text-white' text="Building Brands" />
                             <TextEffectOne wrapperElement="h1"
-                                staggerDuration={0.01} animateOnce className='md:text-8xl text-4xl leading-tight font-semibold text-white' text="and Solve Tech" />
+                                staggerDuration={0.01} animateOnce className='md:text-7xl 2xl:text-8xl text-4xl leading-tight font-semibold text-white' text="and Solve Tech" />
                             <TextEffectOne wrapperElement="h1"
-                                staggerDuration={0.01} animateOnce className='md:text-8xl text-4xl leading-tight font-semibold text-white' text="Challenges" />
+                                staggerDuration={0.01} animateOnce className='md:text-7xl 2xl:text-8xl text-4xl leading-tight font-semibold text-white' text="Challenges" />
                             <TextEffectOne wrapperElement="p"
                                 staggerDuration={0.005} initialDelay={0.01} animateOnce className='text-[#ABAEBB] max-w-2xl !leading-tight mx-auto md:mt-5 mt-3 md:text-lg' text="We have become the top-notch software development services provider primarily due to our." />
                             <div className="flex items-center gap-7 justify-center md:flex-row flex-col mt-6">
@@ -118,8 +118,16 @@ const Page = () => {
                 </div>
             </div>
 
-            <div className="md:mt-20 mt-8 w-full mx-auto md:p-5 p-3 bg-[#18181a79]">
-                <Clients />
+            <div className="md:mt-20 mt-8 w-full mx-auto md:p-5 p-3 bg-black md:py-28 py-14">
+                <Image src={"/images/box.svg"} width={1000} height={1000} className="absolute top-0 right-0 w-1/4" alt="box" />
+                <Image src={"/images/box.svg"} width={1000} height={1000} className="absolute opacity-45 bottom-0 left-0 w-1/4" alt="box" />
+                <TextEffectOne wrapperElement="h2"
+                    staggerDuration={0.02} initialDelay={0.1} animateOnce className='md:text-5xl text-3xl text-center font-medium text-zinc-100' text="Our Clients" />
+                <TextEffectOne wrapperElement="p"
+                    staggerDuration={0.005} initialDelay={0.1} animateOnce className='text-zinc-300 md:mb-14 mb-8 md:mt-5 mt-3 text-center max-w-4xl mx-auto' text="We take pride in our diverse clientele, ranging from startups to established enterprises. Our clients trust us to deliver innovative solutions that drive their business forward." />
+                <div className="relative z-20">
+                    <Clients />
+                </div>
             </div>
 
             <div className="md:mt-20 mt-8 max-w-7xl w-full mx-auto md:p-5 p-3">

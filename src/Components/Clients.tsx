@@ -1,44 +1,83 @@
 "use client";
-import Slider from 'react-infinite-logo-slider';
+
+import Image from "next/image";
+
+const logo = [
+    {
+        image:"/client/benchmarkvending.png",
+        alt: "Benchmark Vending",
+    },
+    {
+        image:"/client/cultivatingland.png",
+        alt: "cultivatingland",
+    },
+    {
+        image:"/client/elitevendingkg.png",
+        alt: "elitevendingkg",
+    },
+    {
+        image:"/client/heartboxvend.png",
+        alt: "heartboxvend",
+    },
+    {
+        image:"/client/llgamingsystems.png",
+        alt: "llgamingsystems",
+    },
+    {
+        image:"/client/nextgvending.png",
+        alt: "nextgvending",
+    },
+    {
+        image:"/client/sleddistribution.png",
+        alt: "sleddistribution",
+    },
+    {
+        image:"/client/logo (1).jpg",
+        alt: "logo",
+    },
+    {
+        image:"/client/logo (1).png",
+        alt: "logo",
+    },
+    {
+        image:"/client/logo (2).png",
+        alt: "logo",
+    },
+    {
+        image:"/client/logo (2).jpg",
+        alt: "logo",
+    },
+    {
+        image:"/client/logo (3).png",
+        alt: "logo",
+    },
+    {
+        image:"/client/logo (3).jpg",
+        alt: "logo",
+    },
+    {
+        image:"/client/logo (4).jpg",
+        alt: "logo",
+    },
+    {
+        image:"/client/logo (5).jpg",
+        alt: "logo",
+    },
+    {
+        image:"/client/logo (6).jpg",
+        alt: "logo",
+    },
+]
 
 const Clients = () => {
     return (
         <>
-            <div className="relative overflow-hidden">
-                <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#848485] via-[#848485]/70 to-transparent pointer-events-none z-10" />
-                <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#848485] via-[#848485]/70 to-transparent pointer-events-none z-10" />
-
-                <Slider
-                    width="250px"
-                    duration={40}
-                    pauseOnHover={true}
-                    blurBorders={false}
-                    blurBorderColor={'#fff'}
-                    toRight={false}
-                >
-                    <Slider.Slide>
-                        <img src="/client/benchmarkvending.png" alt="client" className="w-36" />
-                    </Slider.Slide>
-                    <Slider.Slide>
-                        <img src="/client/cultivatingland.png" alt="client" className="w-36" />
-                    </Slider.Slide>
-                    <Slider.Slide>
-                        <img src="/client/elitevendingkg.png" alt="client" className="w-36" />
-                    </Slider.Slide>
-                    <Slider.Slide>
-                        <img src="/client/heartboxvend.png" alt="client" className="w-36" />
-                    </Slider.Slide>
-                    <Slider.Slide>
-                        <img src="/client/llgamingsystems.png" alt="client" className="w-36" />
-                    </Slider.Slide>
-                    <Slider.Slide>
-                        <img src="/client/nextgvending.png" alt="client" className="w-36" />
-                    </Slider.Slide>
-                    <Slider.Slide>
-                        <img src="/client/sleddistribution.png" alt="client" className="w-36" />
-                    </Slider.Slide>
-                   
-                </Slider>
+            <div className="grid xl:grid-cols-7 lg:grid-cols-5 md:grid-cols-4 grid-cols-2 w-full gap- 12 h-full max-w-7xl mx-auto items-center">
+                {logo.map((item, index) => (
+                    <div key={index} className="w-full h-40 border border-zinc-600 flex items-center justify-center p-5">
+                        <Image width={100} height={100} src={item.image} className="h-auto w-full" alt={item.alt} />
+                    </div>
+                ))}
             </div>
         </>
     );
