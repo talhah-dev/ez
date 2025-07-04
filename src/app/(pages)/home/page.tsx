@@ -118,7 +118,7 @@ const Page = () => {
                 </div>
             </div>
 
-            <div className="md:mt-20 mt-8 w-full mx-auto md:p-5 p-3 bg-black md:py-28 py-14">
+            <div className="md:mt-20 mt-8 w-full relative mx-auto md:p-5 p-3 bg-black md:py-28 py-14">
                 <Image src={"/images/box.svg"} width={1000} height={1000} className="absolute top-0 right-0 w-1/4" alt="box" />
                 <Image src={"/images/box.svg"} width={1000} height={1000} className="absolute opacity-45 bottom-0 left-0 w-1/4" alt="box" />
                 <TextEffectOne wrapperElement="h2"
