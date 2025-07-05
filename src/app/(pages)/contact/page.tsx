@@ -43,7 +43,7 @@ const Page = () => {
         message: '',
         budget: '',
         services: [],
-        socialMedia: []
+        socialMedia: ""
     })
 
     const formhandler = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -58,7 +58,7 @@ const Page = () => {
             !data.message.trim() ||
             !data.budget.trim() ||
             data.services.length === 0 ||
-            data.socialMedia.length === 0
+            !data.socialMedia.trim()
         ) {
             toast.error("Please fill all the required fields and select options.");
             setLoading(false);
@@ -88,7 +88,7 @@ const Page = () => {
                     budget: "",
                     message: "",
                     services: [],
-                    socialMedia: []
+                    socialMedia: ""
                 });
             } else {
                 toast.error("Something went wrong. Please try again.");
@@ -106,12 +106,13 @@ const Page = () => {
     return (
         <BodyWrapper>
             <div className='bg-[#040406] min-h-screen bg-no-repeat w-full bg-center bg-cover'>
-                <Navbar />
+                <div className="relative z-20">
+                    <Navbar />
+                </div>
                 <Image src={"/images/box.svg"} width={1000} height={1000} className="absolute top-0 right-0 w-1/4" alt="box" />
                 <Image src={"/images/box.svg"} width={1000} height={1000} className="absolute opacity-45 bottom-0 left-0 w-1/4" alt="box" />
 
                 <div className="max-w-7xl relative z-10 w-full md:py-20 py-10 mx-auto md:p-5 p-4 min-h-[calc(100vh-7rem)] flex items-start justify-between md:gap-10 gap-20 md:flex-row flex-col">
-
                     <div className="md:max-w-[40%] w-full md:mt-5 md:text-start text-center ">
                         <h2 className="text-zinc-200 font-medium md:text-5xl leading-tight text-3xl">Have a great idea?</h2>
                         <p className="text-zinc-200 md:text-2xl text-lg mt-4">Tell us about it.</p>
@@ -166,7 +167,7 @@ const Page = () => {
                                         <option className="bg-black py-1 block" value="300-400">$300 - $400</option>
                                         <option className="bg-black py-1 block" value="500-600">$500 - $600</option>
                                         <option className="bg-black py-1 block" value="600-700">$600 - $700</option>
-                                        <option className="bg-black py-1 block" value="custom">Custom</option>
+                                        {/* <option className="bg-black py-1 block" value="custom">Custom</option> */}
                                     </select>
 
                                 </div>
@@ -196,22 +197,29 @@ const Page = () => {
                                 <div className="md:col-span-2">
                                     <label htmlFor="" className="text-13 text-zinc-300 text-sm font-medium leading-none tracking-tight text-gray-94">How did you find us?</label>
                                     <div className="flex items-center mt-2 gap-2 flex-wrap">
-                                        {
-                                            SocialMedia.map((name, index) => (
-                                                <p key={index} onClick={() => {
-                                                    const isSelected = data.socialMedia.includes(name.value);
-                                                    setData(prev => ({
-                                                        ...prev,
-                                                        socialMedia: isSelected
-                                                            ? prev.socialMedia.filter(item => item !== name.value)
-                                                            : [...prev.socialMedia, name.value]
-                                                    }));
-                                                }}
-                                                    className={` ${data.socialMedia.includes(name.value) ? "border-white bg-white/20" : "border-white/20 bg-white/5"} text-zinc-200 text-sm px-3 py-1 flex gap-1.5 rounded-full cursor-pointer hover:opacity-70 items-center active:translate-y-0.5 transition-all duration-500 border `}>{name.icon}
-                                                    {name.name}</p>
-                                            ))
-                                        }
+                                        {SocialMedia.map((name, index) => {
+                                            const isSelected = data.socialMedia === name.value;
+                                            return (
+                                                <p
+                                                    key={index}
+                                                    onClick={() => {
+                                                        setData(prev => ({
+                                                            ...prev,
+                                                            socialMedia: isSelected ? '' : name.value, // toggle selection
+                                                        }));
+                                                    }}
+                                                    className={`${isSelected
+                                                        ? 'border-white bg-white/20'
+                                                        : 'border-white/20 bg-white/5'
+                                                        } text-zinc-200 text-sm px-3 py-1 flex gap-1.5 rounded-full cursor-pointer hover:opacity-70 items-center active:translate-y-0.5 transition-all duration-500 border`}
+                                                >
+                                                    {name.icon}
+                                                    {name.name}
+                                                </p>
+                                            );
+                                        })}
                                     </div>
+
                                 </div>
                                 <button disabled={loading} className="px-8 py-2.5 text-zinc-200 bt cursor-pointer w-full md:w-auto transition-all flex items-center justify-center duration-500 hover:opacity-80 rounded-full border border-[#f1a274] md:col-span-2">{loading ? (<div className="flex items-center gap-2">
                                     <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">

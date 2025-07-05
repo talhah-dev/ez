@@ -12,6 +12,7 @@ import DevelopmentCard from '@/Components/DevelopmentCard';
 import Clients from '@/Components/Clients';
 import { FaArrowRightLong } from "react-icons/fa6";
 import { TextEffectOne, TextEffectThree } from 'react-text-animate';
+import Project from '@/Components/Project';
 
 const Page = () => {
 
@@ -136,24 +137,7 @@ const Page = () => {
                 <TextEffectOne wrapperElement="p"
                     staggerDuration={0.005} initialDelay={0.1} animateOnce className='text-zinc-600 md:mt-5 mt-3 text-center max-w-4xl mx-auto' text="We have successfully delivered a wide range of projects across various industries. Our portfolio showcases our expertise in web and mobile app development, digital marketing, and custom software solutions." />
                 <div className="grid md:mt-12 mt-8 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-5 gap-2">
-                    <div className="w-full md:h-[18.5rem] rounded-2xl overflow-hidden">
-                        <Image src={"/projects/project1.jpeg"} width={1000} height={1000} className='w-full transition-all duration-500 hover:scale-105 rounded-2xl' alt='project' />
-                    </div>
-                    <div className="w-full md:h-[18.5rem] rounded-2xl overflow-hidden">
-                        <Image src={"/projects/project2.jpeg"} width={1000} height={1000} className='w-full transition-all duration-500 hover:scale-105 rounded-2xl' alt='project' />
-                    </div>
-                    <div className="w-full md:h-[18.5rem] rounded-2xl overflow-hidden">
-                        <Image src={"/projects/project3.jpeg"} width={1000} height={1000} className='w-full transition-all duration-500 hover:scale-105 rounded-2xl' alt='project' />
-                    </div>
-                    <div className="w-full md:h-[18.5rem] rounded-2xl overflow-hidden">
-                        <Image src={"/projects/project4.jpeg"} width={1000} height={1000} className='w-full transition-all duration-500 hover:scale-105 rounded-2xl' alt='project' />
-                    </div>
-                    <div className="w-full md:h-[18.5rem] rounded-2xl overflow-hidden">
-                        <Image src={"/projects/project5.jpeg"} width={1000} height={1000} className='w-full transition-all duration-500 hover:scale-105 rounded-2xl' alt='project' />
-                    </div>
-                    <div className="w-full md:h-[18.5rem] rounded-2xl overflow-hidden">
-                        <Image src={"/projects/project1.jpeg"} width={1000} height={1000} className='w-full transition-all duration-500 hover:scale-105 rounded-2xl' alt='project' />
-                    </div>
+                    <Project showImages={6} />
                 </div>
 
                 <div className="flex items-center justify-center mt-12">

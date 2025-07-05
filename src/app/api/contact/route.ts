@@ -28,3 +28,14 @@ export async function POST(request: Request) {
         return new Response(JSON.stringify({ error: 'Server error' }), { status: 500 });
     }
 }
+
+export async function GET() {
+    try {
+        await mongooseConnection();
+        const contacts = await contact.find();
+        return new Response(JSON.stringify(contacts), { status: 200 });
+    } catch (err) {
+        console.error(err);
+        return new Response(JSON.stringify({ error: 'Server error' }), { status: 500 });
+    }
+}

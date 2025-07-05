@@ -1,5 +1,6 @@
 import BodyWrapper from "@/app/BodyWrapper"
 import Navbar from "@/Components/Navbar"
+import Project from "@/Components/Project"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -45,33 +46,7 @@ const Page = () => {
                     </p>
                 </div>
                 <div className="md:mt-16 mt-8 grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-5 gap-2">
-                    <div className="w-full md:h-[18.5rem] rounded-2xl overflow-hidden">
-                        <Image src={"/projects/project1.jpeg"} width={1000} height={1000} className='w-full transition-all duration-500 hover:scale-105 rounded-2xl' alt='project' />
-                    </div>
-                    <div className="w-full md:h-[18.5rem] rounded-2xl overflow-hidden">
-                        <Image src={"/projects/project2.jpeg"} width={1000} height={1000} className='w-full transition-all duration-500 hover:scale-105 rounded-2xl' alt='project' />
-                    </div>
-                    <div className="w-full md:h-[18.5rem] rounded-2xl overflow-hidden">
-                        <Image src={"/projects/project3.jpeg"} width={1000} height={1000} className='w-full transition-all duration-500 hover:scale-105 rounded-2xl' alt='project' />
-                    </div>
-                    <div className="w-full md:h-[18.5rem] rounded-2xl overflow-hidden">
-                        <Image src={"/projects/project4.jpeg"} width={1000} height={1000} className='w-full transition-all duration-500 hover:scale-105 rounded-2xl' alt='project' />
-                    </div>
-                    <div className="w-full md:h-[18.5rem] rounded-2xl overflow-hidden">
-                        <Image src={"/projects/project5.jpeg"} width={1000} height={1000} className='w-full transition-all duration-500 hover:scale-105 rounded-2xl' alt='project' />
-                    </div>
-                    <div className="w-full md:h-[18.5rem] rounded-2xl overflow-hidden">
-                        <Image src={"/projects/project1.jpeg"} width={1000} height={1000} className='w-full transition-all duration-500 hover:scale-105 rounded-2xl' alt='project' />
-                    </div>
-                    <div className="w-full md:h-[18.5rem] rounded-2xl overflow-hidden">
-                        <Image src={"/projects/project1.jpeg"} width={1000} height={1000} className='w-full transition-all duration-500 hover:scale-105 rounded-2xl' alt='project' />
-                    </div>
-                    <div className="w-full md:h-[18.5rem] rounded-2xl overflow-hidden">
-                        <Image src={"/projects/project2.jpeg"} width={1000} height={1000} className='w-full transition-all duration-500 hover:scale-105 rounded-2xl' alt='project' />
-                    </div>
-                    <div className="w-full md:h-[18.5rem] rounded-2xl overflow-hidden">
-                        <Image src={"/projects/project3.jpeg"} width={1000} height={1000} className='w-full transition-all duration-500 hover:scale-105 rounded-2xl' alt='project' />
-                    </div>
+                    <Project />
                 </div>
             </div>
 

@@ -12,14 +12,10 @@ import { FaFacebookF } from "react-icons/fa";
 import { TextEffectOne, TextEffectThree } from "react-text-animate";
 import { useState } from "react";
 import { toast } from "react-toastify";
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
-import { db } from "@/lib/firebase";
-import { useRouter } from "next/navigation";
 import { BsArrowDown } from "react-icons/bs";
 
 const Footer = () => {
 
-    const router = useRouter();
     const [email, setEmail] = useState<string>("")
 
     const emailSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -30,21 +26,6 @@ const Footer = () => {
             return
         }
 
-        if (email == "ezbrandbuilders@gmail18513") {
-            router.push("/dashboard");
-            return
-        }
-
-        try {
-            await addDoc(collection(db, "subscribe_emails"), {
-                email,
-                createdAt: serverTimestamp(),
-            });
-            toast.success("E-Mail Submit Successfully");
-            setEmail("")
-        } catch (e) {
-            console.error("Error adding document: ", e);
-        }
     }
 
     return (

@@ -23,7 +23,7 @@ const Page = () => {
             setCookie("isLoggedIn", "true", { path: "/" }) // 🍪 set cookie
             toast.success("Login successful!");
             // Optional redirect
-            window.location.href = "/dashboard";
+            window.location.href = "/dashboard/contact";
         } else {
             toast.error("Invalid email or password!");
         }
