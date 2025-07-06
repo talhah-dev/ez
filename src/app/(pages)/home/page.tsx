@@ -21,14 +21,14 @@ const Page = () => {
             <div className='bg-[url(/images/home_bg.svg)] min-h-screen bg-no-repeat w-full bg-center bg-cover'>
                 <Navbar />
                 <div className="overflow-hidden mt-10 md:mt-0  max-w-7xl mx-auto w-full">
-                    <div className="flex items-center md:flex-row flex-col min-h-[calc(100vh-6rem)] justify-center md:gap-16 gap-5">
+                    <div className="flex items-center md:flex-row flex-col md:min-h-[calc(100vh-6rem)] md:py-0 py-20 justify-center md:gap-16 gap-5">
                         <div className="w-full px-5 text-center" >
                             <TextEffectOne wrapperElement="h1"
-                                staggerDuration={0.01} animateOnce className='md:text-7xl 2xl:text-8xl text-4xl leading-tight font-semibold text-white' text="Building Brands" />
+                                staggerDuration={0.01} animateOnce className='md:text-7xl 2xl:text-8xl text-4xl leading-tight font-semibold text-white' text="Helping Businesses" />
                             <TextEffectOne wrapperElement="h1"
-                                staggerDuration={0.01} animateOnce className='md:text-7xl 2xl:text-8xl text-4xl leading-tight font-semibold text-white' text="and Solve Tech" />
+                                staggerDuration={0.01} animateOnce className='md:text-7xl 2xl:text-8xl text-4xl leading-tight font-semibold text-white' text="to Become Iconic" />
                             <TextEffectOne wrapperElement="h1"
-                                staggerDuration={0.01} animateOnce className='md:text-7xl 2xl:text-8xl text-4xl leading-tight font-semibold text-white' text="Challenges" />
+                                staggerDuration={0.01} animateOnce className='md:text-7xl 2xl:text-8xl text-4xl leading-tight font-semibold text-white' text=" Brands" />
                             <TextEffectOne wrapperElement="p"
                                 staggerDuration={0.005} initialDelay={0.01} animateOnce className='text-[#ABAEBB] max-w-2xl !leading-tight mx-auto md:mt-5 mt-3 md:text-lg' text="We have become the top-notch software development services provider primarily due to our." />
                             <div className="flex items-center gap-7 justify-center md:flex-row flex-col mt-6">
