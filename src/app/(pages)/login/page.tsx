@@ -37,14 +37,17 @@ const Page = () => {
                         <Link href={"/"}>
                             <Image src={"/images/logo.png"} width={200} height={200} className="w-auto md:h-10 h-8" alt="Logo" />
                         </Link>
-                        <p className="text-zinc-300">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit molestiae iusto odio officiis hic aperiam consectetur? Accusamus, molestias. In nisi aperiam enim maxime tempore dolore voluptates tenetur incidunt animi ex.</p>
+                        <p className="text-zinc-300">
+                            Our goal is to give businesses peace of mind and allow them to concentrate on their primary business operations by offering continuous support and maintenance.
+
+                        </p>
                     </div>
                 </div>
                 <div className="lg:max-w-1/2 p-5 relative w-full bg-[#e5e5e6] min-h-screen flex items-center justify-center">
                     <Link href={"/signin"} className=" text-zinc-800 absolute md:top-8 top-5 md:right-8 right-5">Sign In</Link>
                     <form onSubmit={loginHandler} className="text-center max-w-sm w-full">
                         <h2 className="text-zinc-800 font-medium text-2xl capitalize">Welcome Back 👋</h2>
-                        <p className="text-zinc-800 mt-1">Please sign in to continue!</p>
+                        <p className="text-zinc-800 mt-1">Please login in to continue!</p>
                         <label htmlFor="email" className="text-start block text-sm mt-5 text-zinc-800 font-medium">Email</label>
                         <input onChange={(e) => setEmail(e.target.value)} type="email" id="email" placeholder="name@gmail.com" className="border placeholder:text-sm outline-zinc-500 mt-1 rounded-lg border-zinc-400 w-full px-3 py-2" />
                         <label htmlFor="password" className="text-start block text-sm mt-4 text-zinc-800 font-medium">Your Password</label>

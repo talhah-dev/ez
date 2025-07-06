@@ -1,5 +1,7 @@
 import mongooseConnection from "@/lib/mongodb";
 import contact from "../../../../Models/contact";
+import { NextResponse } from "next/server";
+import mongoose from "mongoose";
 
 export async function POST(request: Request) {
     try {
@@ -37,5 +39,31 @@ export async function GET() {
     } catch (err) {
         console.error(err);
         return new Response(JSON.stringify({ error: 'Server error' }), { status: 500 });
+    }
+}
+
+export async function DELETE(request: Request) {
+    try {
+
+        await mongooseConnection();
+
+        const { searchParams } = new URL(request.url);
+        const id = searchParams.get("id");
+        if (id) {
+            if (!mongoose.Types.ObjectId.isValid(id)) {
+                return NextResponse.json({ error: 'Invalid id' }, { status: 400 });
+            }
+            const deleted = await contact.findByIdAndDelete(id)
+            if (!deleted) {
+                return NextResponse.json({ error: 'Contact not found' }, { status: 404 });
+            }
+            return NextResponse.json({ success: true, message: `Deleted Contact ${id}` }, { status: 200 });
+        }
+
+        await contact.deleteMany({});
+        return NextResponse.json({ success: true }, { status: 200 });
+    } catch (error: any) {
+        console.error("API ERROR:", error.message || error);
+        return NextResponse.json({ error: 'Server error' }, { status: 500 });
     }
 }

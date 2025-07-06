@@ -10,23 +10,45 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { TextEffectOne, TextEffectThree } from "react-text-animate";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { BsArrowDown } from "react-icons/bs";
+import axios from "axios";
 
 const Footer = () => {
 
-    const [email, setEmail] = useState<string>("")
+    const [email, setEmail] = useState<string>("");
 
     const emailSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        if (!email) {
-            toast.error("Enter Your E-Mail")
-            return
+        if (!email.trim()) {
+            toast.error("Enter Your E-Mail");
+            return;
         }
 
-    }
+        try {
+            const response = await axios.post("/api/email", { email });
+
+            // If status is 2xx, this runs
+            if (response.data.success) {
+                toast.success("Email sent successfully!");
+                setEmail(""); // Clear input after success
+            } else {
+                // Usually won't reach here if status code is not 2xx
+                toast.error(response.data.error || "Failed to send email. Please try again.");
+            }
+        } catch (error: any) {
+            const message =
+                error.response?.data?.error || // The "Email already exists" message from backend
+                error.message ||               // Generic axios error message
+                "Failed to send email. Please try again later.";
+
+            toast.error(message);
+        }
+
+    };
+
 
     return (
         <>

@@ -11,7 +11,8 @@ const Page = () => {
                         <Link href={"/"}>
                             <Image src={"/images/logo.png"} width={200} height={200} className="w-auto md:h-10 h-8" alt="Logo" />
                         </Link>
-                        <p className="text-zinc-300">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit molestiae iusto odio officiis hic aperiam consectetur? Accusamus, molestias. In nisi aperiam enim maxime tempore dolore voluptates tenetur incidunt animi ex.</p>
+                        <p className="text-zinc-300">Our goal is to give businesses peace of mind and allow them to concentrate on their primary business operations by offering continuous support and maintenance.
+</p>
                     </div>
                 </div>
                 <div className="lg:max-w-1/2 relative w-full bg-[#e5e5e6] min-h-screen flex items-center justify-center p-5">
