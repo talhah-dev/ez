@@ -10,7 +10,7 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { TextEffectOne, TextEffectThree } from "react-text-animate";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { toast } from "react-toastify";
 import { BsArrowDown } from "react-icons/bs";
 import axios from "axios";
