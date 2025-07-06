@@ -38,15 +38,20 @@ const Footer = () => {
                 // Usually won't reach here if status code is not 2xx
                 toast.error(response.data.error || "Failed to send email. Please try again.");
             }
-        } catch (error: any) {
-            const message =
-                error.response?.data?.error || // The "Email already exists" message from backend
-                error.message ||               // Generic axios error message
-                "Failed to send email. Please try again later.";
+        } catch (error: unknown) {
+            let message = "Failed to send email. Please try again later.";
+
+            if (typeof error === "object" && error !== null) {
+                // Type guard for AxiosError shape
+                if ("response" in error && typeof error.response === "object" && error.response !== null) {
+                    message = (error.response as any).data?.error || message;
+                } else if ("message" in error && typeof error.message === "string") {
+                    message = error.message;
+                }
+            }
 
             toast.error(message);
         }
-
     };
 
 

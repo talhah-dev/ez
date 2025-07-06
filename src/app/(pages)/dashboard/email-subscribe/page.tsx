@@ -6,7 +6,7 @@ import React, { useEffect, useState } from 'react'
 import { GoTrash } from 'react-icons/go';
 import { toast } from 'react-toastify';
 
-const page = () => {
+const Page = () => {
 
     type EmailItem = {
         email: string;
@@ -143,4 +143,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page
