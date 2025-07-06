@@ -62,8 +62,13 @@ export async function DELETE(request: Request) {
 
         await contact.deleteMany({});
         return NextResponse.json({ success: true }, { status: 200 });
-    } catch (error: any) {
-        console.error("API ERROR:", error.message || error);
+    } catch (error: unknown) {
+        if (error instanceof Error) {
+            console.error("API ERROR:", error.message);
+        } else {
+            console.error("API ERROR:", error);
+        }
         return NextResponse.json({ error: 'Server error' }, { status: 500 });
     }
+
 }

@@ -21,10 +21,13 @@ export async function POST(request: Request) {
         const newEmail = await EmailModel.create({ email });
         return NextResponse.json({ success: true }, { status: 200 });
 
-    } catch (error: any) {
-        console.error("API ERROR:", error.message || error);
+    } catch (error: unknown) {
+        if (error instanceof Error) {
+            console.error("API ERROR:", error.message);
+        } else {
+            console.error("API ERROR:", error);
+        }
         return NextResponse.json({ error: 'Server error' }, { status: 500 });
-
     }
 }
 
@@ -33,8 +36,12 @@ export async function GET() {
         await mongooseConnection();
         const emails = await EmailModel.find().sort({ createdAt: -1 });
         return NextResponse.json(emails, { status: 200 }); // Always return 200, even if empty
-    } catch (error: any) {
-        console.error("API ERROR:", error.message || error);
+    } catch (error: unknown) {
+        if (error instanceof Error) {
+            console.error("API ERROR:", error.message);
+        } else {
+            console.error("API ERROR:", error);
+        }
         return NextResponse.json({ error: 'Server error' }, { status: 500 });
     }
 }
@@ -61,8 +68,12 @@ export async function DELETE(request: Request) {
 
         await EmailModel.deleteMany({});
         return NextResponse.json({ success: true }, { status: 200 });
-    } catch (error: any) {
-        console.error("API ERROR:", error.message || error);
+    } catch (error: unknown) {
+        if (error instanceof Error) {
+            console.error("API ERROR:", error.message);
+        } else {
+            console.error("API ERROR:", error);
+        }
         return NextResponse.json({ error: 'Server error' }, { status: 500 });
     }
 }
