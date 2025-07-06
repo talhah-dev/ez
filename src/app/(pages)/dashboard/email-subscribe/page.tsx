@@ -23,7 +23,7 @@ const Page = () => {
             setLoading(true);
             const response = await axios.get('/api/email');
             setEmails(response.data); // success case
-        } catch (error: unknown) {
+        } catch {
             setEmails([]); // Treat 404 as empty list
             toast.error("Failed to fetch emails"); // Other errors
         } finally {
@@ -65,7 +65,7 @@ const Page = () => {
                     toast.error("Failed to delete emails");
                 }
             }
-        } catch (error: unknown) {
+        } catch {
             toast.error("Failed to delete emails");
         }
     };

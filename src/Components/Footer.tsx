@@ -38,9 +38,8 @@ const Footer = () => {
                 // Usually won't reach here if status code is not 2xx
                 toast.error(response.data.error || "Failed to send email. Please try again.");
             }
-        } catch (error: unknown) {
-            let message = "Failed to send email. Please try again later.";
-            toast.error(message);
+        } catch {
+            toast.error("Failed to send email. Please try again later.");
         }
     };
 

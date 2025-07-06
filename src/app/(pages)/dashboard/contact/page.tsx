@@ -65,8 +65,7 @@ const Page = () => {
 
         }
 
-        catch (error) {
-            console.error("Error deleting Contacts:", error);
+        catch {
             toast.error("Failed to delete Contacts");
         }
     };
