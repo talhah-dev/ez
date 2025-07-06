@@ -40,16 +40,6 @@ const Footer = () => {
             }
         } catch (error: unknown) {
             let message = "Failed to send email. Please try again later.";
-
-            if (typeof error === "object" && error !== null) {
-                // Type guard for AxiosError shape
-                if ("response" in error && typeof error.response === "object" && error.response !== null) {
-                    message = (error.response as any).data?.error || message;
-                } else if ("message" in error && typeof error.message === "string") {
-                    message = error.message;
-                }
-            }
-
             toast.error(message);
         }
     };

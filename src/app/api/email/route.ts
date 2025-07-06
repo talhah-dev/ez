@@ -1,7 +1,6 @@
 import mongooseConnection from "@/lib/mongodb";
 import { NextResponse } from "next/server";
 import EmailModel from "../../../../Models/email";
-import { request } from "http";
 import mongoose from "mongoose";
 
 export async function POST(request: Request) {
@@ -18,7 +17,7 @@ export async function POST(request: Request) {
             return NextResponse.json({ error: 'Email already exists' }, { status: 400 });
         }
 
-        const newEmail = await EmailModel.create({ email });
+        await EmailModel.create({ email });
         return NextResponse.json({ success: true }, { status: 200 });
 
     } catch (error: unknown) {
