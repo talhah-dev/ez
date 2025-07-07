@@ -33,7 +33,7 @@ const Page = () => {
                                 staggerDuration={0.005} initialDelay={0.01} animateOnce className='text-[#ABAEBB] max-w-2xl !leading-tight mx-auto md:mt-5 mt-3 md:text-lg' text="We have become the top-notch software development services provider primarily due to our." />
                             <div className="flex items-center gap-7 justify-center md:flex-row flex-col mt-6">
                                 <Link href={"/contact"} className="px-10 text-center py-3.5 text-zinc-200 bt cursor-pointer w-full md:w-auto transition-all duration-500 hover:opacity-80 rounded-full border border-[#f1a274] ">Get Started</Link>
-                                <Link href={"/services"} className='text-zinc-200 flex items-center gap-1 transition-all duration-500 hover:gap-2 hover:opacity-80'>
+                                <Link href={"/services"} className='text-zinc-200 flex items-center gap-1 transition-all duration-500 hover:opacity-80'>
                                     <TextEffectThree animationDuration={0.2} className='text-zinc-200' text="Explore Our Services" />
                                     <IoIosArrowForward size={18} />
                                 </Link>

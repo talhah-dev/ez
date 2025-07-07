@@ -108,6 +108,9 @@ const Footer = () => {
                                     <li><Link href={"/contact"} className="hover:underline">
                                         <TextEffectThree animationDuration={0.3} text="Contact Us" />
                                     </Link></li>
+                                    <li><Link href={"/blog"} className="hover:underline">
+                                        <TextEffectThree animationDuration={0.3} text="Blog" />
+                                    </Link></li>
                                 </ul>
                             </div>
                             <div className="">

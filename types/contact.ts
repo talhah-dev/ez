@@ -1,6 +1,6 @@
 export interface ContactFormData {
     name: string;
-    _id?:string;
+    _id?: string;
     email: string;
     number: string;
     message: string;
@@ -9,4 +9,11 @@ export interface ContactFormData {
     services: string[];      // List of selected services
     socialMedia: string;   // List of selected social platforms
     role?: string;           // Default role is 'user'
+}
+
+export interface BlogPostData {
+    title: string;
+    _id?: string;
+    description: string;
+    imageUrl: string;
 }
