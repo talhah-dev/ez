@@ -26,8 +26,6 @@ const Page = () => {
         fetchBlogPost();
     }, []);
 
-    const data = "<p> hello world <br> my first program  </p>"
-
     return (
         <BodyWrapper>
             <div className="bg-[#040406]">

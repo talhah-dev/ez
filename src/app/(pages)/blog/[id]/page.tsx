@@ -13,7 +13,6 @@ import { useParams } from 'next/navigation'
 const Page = () => {
 
   const params = useParams()
-  const id = params?.id as string
 
   const [blogPost, setBlogPost] = useState<BlogPostData | null>(null)
 
