@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image"
 import BodyWrapper from "@/app/BodyWrapper"
 import Counter from "@/Components/Counter"
@@ -6,8 +7,12 @@ import Link from "next/link"
 import Clients from "@/Components/Clients"
 import { TextEffectOne } from "react-text-animate"
 import DevelopmentCard from "@/Components/DevelopmentCard"
+import { useState } from "react"
 
 const Page = () => {
+
+    const [team, setTeam] = useState("developer")
+
     return (
         <BodyWrapper>
             <div className="bg-[#040406]">
@@ -36,7 +41,7 @@ const Page = () => {
 
                 </div>
                 <div className="md:max-w-[40%] w-full">
-                    <Image src={"/about/DigitalExcellence.png"} width={1000} height={1000} className='w-full md:rounded-xl' alt='EZ Brand Builders digital marketing visual' />
+                    <Image src={"/about/DigitalExcellence.png"} width={500} height={500} className='w-full md:rounded-xl' alt='EZ Brand Builders digital marketing visual' />
                 </div>
             </div>
 
@@ -47,7 +52,7 @@ const Page = () => {
                 </div>
                 <div className="md:max-w-[50%] w-full px-5">
                     <h2 className='md:text-4xl text-2xl font-medium text-zinc-900'>Our Vision</h2>
-                    <p className='text-zinc-600 md:mt-5 mt-3 md:text-'>{"To deliver innovative digital solutions that not only meet but also excel our client&rsquo;s expectations, automate process, and also challenging issues"}</p>
+                    <p className='text-zinc-600 md:mt-5 mt-3 md:text-'>{"To deliver innovative digital solutions that not only meet but also excel our clients expectations, automate process, and also challenging issues"}</p>
                 </div>
             </div>
 
@@ -73,8 +78,8 @@ const Page = () => {
                 <TextEffectOne initialDelay={0.1} wrapperElement="p"
                     staggerDuration={0.005} animateOnce className='text-zinc-600 md:mt-5 mt-3 text-center' text="Exceptional development. Seamless integration. Delighted developers. Increased adoption." />
                 <div className="grid md:mt-12 mt-8 md:grid-cols-2 grid-cols-1 md:gap-3 gap-2">
-                    <Image src={"/images/development-card-1.jpg"} alt='develoment card' className='w-full md:block hidden rounded-xl md:col-span-2' width={1000} height={1000} />
-                    <Image src={"/images/development-card-1-sm.jpg"} alt='develoment card' className='w-full md:hidden block rounded-xl' width={1000} height={1000} />
+                    <Image src={"/images/development-card-1.jpg"} alt='develoment card' className='w-full md:block hidden rounded-xl md:col-span-2' width={500} height={500} />
+                    <Image src={"/images/development-card-1-sm.jpg"} alt='develoment card' className='w-full md:hidden block rounded-xl' width={500} height={500} />
                     <DevelopmentCard image={"/images/development-card-2.jpg"} title={"Accelerate time-to-market"} description={"descriptionGet your product to market faster with our SDK development services. Reduce time-to-market from months to weeks."} />
                     <DevelopmentCard image={"/images/development-card-3.jpg"} title={"Reduce development costs"} description={"Minimise development costs for your customers and internal teams. Well-designed SDKs save valuable time and resources."} />
                     <DevelopmentCard image={"/images/development-card-4.jpg"} title={"Boost app quality and stability"} description={"Develop SDKs that empower developers to build stable, performant, and secure applications, leading to a better user and developer experience."} />
@@ -83,8 +88,8 @@ const Page = () => {
             </div>
 
             <div className="w-full mx-auto md:mt-20 mt-8 md:p-5 p-3 bg-black md:py-28 py-14 relative">
-                <Image src={"/images/box.svg"} width={1000} height={1000} className="absolute top-0 right-0 w-1/4" alt="box" />
-                <Image src={"/images/box.svg"} width={1000} height={1000} className="absolute opacity-45 bottom-0 left-0 w-1/4" alt="box" />
+                <Image src={"/images/box.svg"} width={500} height={500} className="absolute top-0 right-0 w-1/4" alt="box" />
+                <Image src={"/images/box.svg"} width={500} height={500} className="absolute opacity-45 bottom-0 left-0 w-1/4" alt="box" />
                 <TextEffectOne wrapperElement="h2"
                     staggerDuration={0.02} initialDelay={0.1} animateOnce className='md:text-5xl text-3xl text-center font-medium text-zinc-100' text="Our Clients" />
                 <TextEffectOne wrapperElement="p"
@@ -94,39 +99,145 @@ const Page = () => {
                 </div>
             </div>
 
-            <div className="md:mt-20 mt-8 max-w-7xl w-full mx-auto p-5">
+            <div className="md:mt-20 mt-8 max-w-5xl w-full mx-auto p-5">
                 <h2 className='md:text-5xl text-3xl text-center font-medium text-zinc-900'>Our Team Members</h2>
                 <p className='text-zinc-600 md:mt-5 mt-3 text-center max-w-5xl mx-auto'>
                     Our team of experts is dedicated to delivering high-quality solutions that meet the unique needs of our clients. With a focus on innovation and excellence, we are committed to helping businesses succeed in the digital age.
                 </p>
-                <div className="md:mt-16 mt-8 grid md:grid-cols-4 gap-y-8 grid-cols-2 md:gap-5 gap-2">
 
-                    <div className="group w-full">
-                        <div className="w-full md:h-80 h-40 rounded-2xl overflow-hidden">
-                            <Image src={"/team/man.jpg"} width={1000} height={1000} className='w-full h-full object-cover transition-all duration-500 group-hover:scale-105 rounded-2xl' alt='project' />
-                        </div>
-                        <h2 className="mt-2 text-center text-zinc-800 font-medium text-lg">Developer</h2>
+                <div className="grid gap-1 grid-cols-3 p-1 rounded-lg items-center my-6 mx-auto max-w-sm bg-white">
+                    <div onClick={() => setTeam("developer")} className={`px-2 py-1 ${team == "developer" && "bg-zinc-200"} rounded-lg transition-all duration-500 hover:bg-zinc-200 cursor-pointer text-center`}>
+                        Developers
                     </div>
-                    <div className="group w-full">
-                        <div className="w-full md:h-80 h-40 rounded-2xl overflow-hidden">
-                            <Image src={"/team/man.jpg"} width={1000} height={1000} className='w-full h-full object-cover transition-all duration-500 group-hover:scale-105 rounded-2xl' alt='project' />
-                        </div>
-                        <h2 className="mt-2 text-center text-zinc-800 font-medium text-lg">Marketer</h2>
+                    <div onClick={() => setTeam("marketing")} className={`px-2 py-1 ${team == "marketing" && "bg-zinc-200"} rounded-lg transition-all duration-500 hover:bg-zinc-200 cursor-pointer text-center`}>
+                        Marketings
                     </div>
-                    <div className="group w-full">
-                        <div className="w-full md:h-80 h-40 rounded-2xl overflow-hidden">
-                            <Image src={"/team/man.jpg"} width={1000} height={1000} className='w-full h-full object-cover transition-all duration-500 group-hover:scale-105 rounded-2xl' alt='project' />
-                        </div>
-                        <h2 className="mt-2 text-center text-zinc-800 font-medium text-lg">SEO Expert</h2>
+                    <div onClick={() => setTeam("operation")} className={`px-2 py-1 ${team == "operation" && "bg-zinc-200"} rounded-lg transition-all duration-500 hover:bg-zinc-200 cursor-pointer text-center`}>
+                        Operations
                     </div>
-                    <div className="group w-full">
-                        <div className="w-full md:h-80 h-40 rounded-2xl overflow-hidden">
-                            <Image src={"/team/woman.jpg"} width={1000} height={1000} className='w-full h-full object-cover transition-all duration-500 group-hover:scale-105 rounded-2xl' alt='project' />
-                        </div>
-                        <h2 className="mt-2 text-center text-zinc-800 font-medium text-lg">Devops</h2>
-                    </div>
-
                 </div>
+
+                {
+                    team == "developer" && (
+                        <div className="md:mt-16 mt-8 grid md:grid-cols-4 gap-y-8 grid-cols-2 md:gap-5 gap-2">
+                            <div className="group w-full">
+                                <div className="w-full md:h-60 h-40 rounded-2xl overflow-hidden">
+                                    <Image src={"/team/man.jpg"} width={500} height={500} className='w-full h-full object-cover transition-all duration-500 group-hover:scale-105 rounded-2xl' alt='project' />
+                                </div>
+                                <h2 className="mt-2 text-center text-zinc-800 font-medium md:text-lg">Muhammad Talha</h2>
+                            </div>
+                            <div className="group w-full">
+                                <div className="w-full md:h-60 h-40 rounded-2xl overflow-hidden">
+                                    <Image src={"/team/man.jpg"} width={500} height={500} className='w-full h-full object-cover transition-all duration-500 group-hover:scale-105 rounded-2xl' alt='project' />
+                                </div>
+                                <h2 className="mt-2 text-center text-zinc-800 font-medium md:text-lg">Ammar Khalid</h2>
+                            </div>
+                            <div className="group w-full">
+                                <div className="w-full md:h-60 h-40 rounded-2xl overflow-hidden">
+                                    <Image src={"/team/man.jpg"} width={500} height={500} className='w-full h-full object-cover transition-all duration-500 group-hover:scale-105 rounded-2xl' alt='project' />
+                                </div>
+                                <h2 className="mt-2 text-center text-zinc-800 font-medium md:text-lg">Musab Noor</h2>
+                            </div>
+                            <div className="group w-full">
+                                <div className="w-full md:h-60 h-40 rounded-2xl overflow-hidden">
+                                    <Image src={"/team/man.jpg"} width={500} height={500} className='w-full h-full object-cover transition-all duration-500 group-hover:scale-105 rounded-2xl' alt='project' />
+                                </div>
+                                <h2 className="mt-2 text-center text-zinc-800 font-medium md:text-lg">Imran Wali</h2>
+                            </div>
+                            <div className="group w-full">
+                                <div className="w-full md:h-60 h-40 rounded-2xl overflow-hidden">
+                                    <Image src={"/team/man.jpg"} width={500} height={500} className='w-full h-full object-cover transition-all duration-500 group-hover:scale-105 rounded-2xl' alt='project' />
+                                </div>
+                                <h2 className="mt-2 text-center text-zinc-800 font-medium md:text-lg">Asadullah</h2>
+                            </div>
+                            <div className="group w-full">
+                                <div className="w-full md:h-60 h-40 rounded-2xl overflow-hidden">
+                                    <Image src={"/team/man.jpg"} width={500} height={500} className='w-full h-full object-cover transition-all duration-500 group-hover:scale-105 rounded-2xl' alt='project' />
+                                </div>
+                                <h2 className="mt-2 text-center text-zinc-800 font-medium md:text-lg">Faheem Hayat</h2>
+                            </div>
+                            <div className="group w-full">
+                                <div className="w-full md:h-60 h-40 rounded-2xl overflow-hidden">
+                                    <Image src={"/team/man.jpg"} width={500} height={500} className='w-full h-full object-cover transition-all duration-500 group-hover:scale-105 rounded-2xl' alt='project' />
+                                </div>
+                                <h2 className="mt-2 text-center text-zinc-800 font-medium md:text-lg">Fasial Jabbar</h2>
+                            </div>
+                        </div>
+                    )
+                }
+                {
+                    team == "marketing" && (
+                        <div className="md:mt-16 mt-8 grid md:grid-cols-4 gap-y-8 grid-cols-2 md:gap-5 gap-2">
+                            <div className="group w-full">
+                                <div className="w-full md:h-60 h-40 rounded-2xl overflow-hidden">
+                                    <Image src={"/team/man.jpg"} width={500} height={500} className='w-full h-full object-cover transition-all duration-500 group-hover:scale-105 rounded-2xl' alt='project' />
+                                </div>
+                                <h2 className="mt-2 text-center text-zinc-800 font-medium md:text-lg">Awais Ahmed</h2>
+                            </div>
+                            <div className="group w-full">
+                                <div className="w-full md:h-60 h-40 rounded-2xl overflow-hidden">
+                                    <Image src={"/team/man.jpg"} width={500} height={500} className='w-full h-full object-cover transition-all duration-500 group-hover:scale-105 rounded-2xl' alt='project' />
+                                </div>
+                                <h2 className="mt-2 text-center text-zinc-800 font-medium md:text-lg">Abduallah</h2>
+                            </div>
+                            <div className="group w-full">
+                                <div className="w-full md:h-60 h-40 rounded-2xl overflow-hidden">
+                                    <Image src={"/team/man.jpg"} width={500} height={500} className='w-full h-full object-cover transition-all duration-500 group-hover:scale-105 rounded-2xl' alt='project' />
+                                </div>
+                                <h2 className="mt-2 text-center text-zinc-800 font-medium md:text-lg">Muhammad Hamza</h2>
+                            </div>
+                            <div className="group w-full">
+                                <div className="w-full md:h-60 h-40 rounded-2xl overflow-hidden">
+                                    <Image src={"/team/man.jpg"} width={500} height={500} className='w-full h-full object-cover transition-all duration-500 group-hover:scale-105 rounded-2xl' alt='project' />
+                                </div>
+                                <h2 className="mt-2 text-center text-zinc-800 font-medium md:text-lg">Ehtisham</h2>
+                            </div>
+                            <div className="group w-full">
+                                <div className="w-full md:h-60 h-40 rounded-2xl overflow-hidden">
+                                    <Image src={"/team/man.jpg"} width={500} height={500} className='w-full h-full object-cover transition-all duration-500 group-hover:scale-105 rounded-2xl' alt='project' />
+                                </div>
+                                <h2 className="mt-2 text-center text-zinc-800 font-medium md:text-lg">Maaz Khan</h2>
+                            </div>
+                            <div className="group w-full">
+                                <div className="w-full md:h-60 h-40 rounded-2xl overflow-hidden">
+                                    <Image src={"/team/man.jpg"} width={500} height={500} className='w-full h-full object-cover transition-all duration-500 group-hover:scale-105 rounded-2xl' alt='project' />
+                                </div>
+                                <h2 className="mt-2 text-center text-zinc-800 font-medium md:text-lg">Muhammad Umer</h2>
+                            </div>
+                            <div className="group w-full">
+                                <div className="w-full md:h-60 h-40 rounded-2xl overflow-hidden">
+                                    <Image src={"/team/man.jpg"} width={500} height={500} className='w-full h-full object-cover transition-all duration-500 group-hover:scale-105 rounded-2xl' alt='project' />
+                                </div>
+                                <h2 className="mt-2 text-center text-zinc-800 font-medium md:text-lg">Talha</h2>
+                            </div>
+                            <div className="group w-full">
+                                <div className="w-full md:h-60 h-40 rounded-2xl overflow-hidden">
+                                    <Image src={"/team/man.jpg"} width={500} height={500} className='w-full h-full object-cover transition-all duration-500 group-hover:scale-105 rounded-2xl' alt='project' />
+                                </div>
+                                <h2 className="mt-2 text-center text-zinc-800 font-medium md:text-lg">Zeeshan Malik</h2>
+                            </div>
+                        </div>
+                    )
+                }
+                {
+                    team == "operation" && (
+                        <div className="md:mt-16 mt-8 grid md:grid-cols-4 gap-y-8 grid-cols-2 md:gap-5 gap-2">
+                            <div className="group w-full">
+                                <div className="w-full md:h-60 h-40 rounded-2xl overflow-hidden">
+                                    <Image src={"/team/sanaullah.png"} width={500} height={500} className='w-full h-full object-cover transition-all duration-500 group-hover:scale-105 rounded-2xl' alt='project' />
+                                </div>
+                                <h2 className="mt-2 text-center text-zinc-800 font-medium md:text-lg">Sanaullah</h2>
+                            </div>
+                            <div className="group w-full">
+                                <div className="w-full md:h-60 h-40 rounded-2xl overflow-hidden">
+                                    <Image src={"/team/man.jpg"} width={500} height={500} className='w-full h-full object-cover transition-all duration-500 group-hover:scale-105 rounded-2xl' alt='project' />
+                                </div>
+                                <h2 className="mt-2 text-center text-zinc-800 font-medium md:text-lg">Muhammad Uzair</h2>
+                            </div>
+                        </div>
+                    )
+                }
+
             </div>
 
             <div className="md:mt-16 mt-8"></div>
